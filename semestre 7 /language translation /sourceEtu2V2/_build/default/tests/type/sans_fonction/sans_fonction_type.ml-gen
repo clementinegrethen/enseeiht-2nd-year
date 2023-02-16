@@ -1,2 +1,0 @@
-(** @canonical Sans_fonction_type.Test *)
-module Test = Sans_fonction_type__Test

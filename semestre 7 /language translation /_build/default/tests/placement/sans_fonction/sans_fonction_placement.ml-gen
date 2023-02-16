@@ -1,0 +1,2 @@
+(** @canonical Sans_fonction_placement.Test *)
+module Test = Sans_fonction_placement__Test

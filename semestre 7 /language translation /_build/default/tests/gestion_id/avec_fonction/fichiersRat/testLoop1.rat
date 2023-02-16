@@ -1,0 +1,6 @@
+main{
+    int x = 0;
+    loop a {
+    print x;
+    if (x=10) {break ;} else {x = (x+1);}
+} }

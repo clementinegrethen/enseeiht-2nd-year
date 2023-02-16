@@ -1,7 +1,0 @@
-main {
-    int x = 0;
-    int * y = (new int);
-    (*y) = 1;
-    int * z = (new int);
-    (*z) = 2;
-}

@@ -1,7 +1,0 @@
-main{
-    int x = 0;
-    loop a {
-    print x;
-    int b=0; 
-    if (x=10) {break b;} else {x = (x+1);}
-} }
