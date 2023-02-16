@@ -1,0 +1,2 @@
+(** @canonical Avec_fonction_type.Test *)
+module Test = Avec_fonction_type__Test

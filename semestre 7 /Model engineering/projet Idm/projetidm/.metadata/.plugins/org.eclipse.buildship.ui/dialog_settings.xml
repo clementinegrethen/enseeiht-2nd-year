@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.buildship.ui.wizard.project.import">
+		<item key="project_location" value="/Users/clementinegrethen/Documents/2A/Metaprogrammation/TPtest"/>
+		<item key="gradle_distribution_type" value="LOCAL_INSTALLATION"/>
+		<item key="gradle_distribution_configuration" value="/Users/clementinegrethen"/>
+		<item key="gradle_user_home" value="/Users/clementinegrethen"/>
+	</section>
+</section>

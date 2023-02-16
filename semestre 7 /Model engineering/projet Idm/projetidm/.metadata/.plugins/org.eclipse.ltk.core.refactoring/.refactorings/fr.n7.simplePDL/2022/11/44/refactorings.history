@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;simplepdl.manip.SimplePDLCreator.java&apos; to &apos;PetriNetCreator.java&apos;&#x0A;- Original project: &apos;fr.n7.simplePDL&apos;&#x0A;- Original element: &apos;simplepdl.manip.SimplePDLCreator.java&apos;&#x0A;- Renamed element: &apos;simplepdl.manip.PetriNetCreator.java&apos;" description="Rename compilation unit &apos;SimplePDLCreator.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;simplepdl.manip{SimplePDLCreator.java" name="PetriNetCreator.java" references="false" stamp="1667743472634" version="1.0"/>
+</session>

@@ -1,0 +1,41 @@
+lweisbecker@lweisbecker-VirtualBox:~/Downloads/tina-3.7.0-amd64-linux/tina-3.7.0/bin$ ./tina /home/lweisbecker/Documents/idm/projetidm/fr.n7.petrinet.toTina/Models/Procede.net /home/lweisbecker/Documents/idm/projetidm/fr.n7.petrinet.toTina/Models/Procede.ktz
+
+# net Procede, 22 places, 8 transitions, 26 arcs                       #
+# bounded, not live, not reversible                                    #
+# abstraction        count      props      psets       dead       live #
+#      states           26         22         26          1          1 # 
+# transitions           47          8          8          0          0 #
+lweisbecker@lweisbecker-VirtualBox:~/Downloads/tina-3.7.0-amd64-linux/tina-3.7.0/bin$ ./selt -p -S /home/lweisbecker/Documents/idm/projetidm/fr.n7.petrinet.toTina/Models/Procede.scn /home/lweisbecker/Documents/idm/projetidm/fr.n7.petrinet.toTina/Models/Procede.ktz -prelude /home/lweisbecker/Documents/idm/projetidm/fr.n7.simplePDL/modele.processus.term.ltl 
+Selt version 3.7.0 -- 05/19/22 -- LAAS/CNRS
+ktz loaded, 26 states, 47 transitions
+0.000s
+
+- source /home/lweisbecker/Documents/idm/projetidm/fr.n7.simplePDL/modele.processus.term.ltl;
+operator process_fini : prop
+TRUE
+TRUE
+FALSE
+  state 0: L.scc*25 Conception_ready Programmation_ready RedactionDoc_ready RedactionTest_ready concepteur*3 developpeur*2 machine*4 redacteur testeur*2
+  -Conception_start->
+  state 1: L.scc*24 Conception_started ConceptionstartToStartRedactionDoc ConceptionstartToStartRedactionTest Programmation_ready RedactionDoc_ready RedactionTest_ready concepteur*3 developpeur*2 machine*4 redacteur testeur*2
+  -Conception_finish->
+  state 2: L.scc*20 Conception_finished ConceptionfinishToFinishRedactionDoc ConceptionfinishToStartProgrammation ConceptionstartToStartRedactionDoc ConceptionstartToStartRedactionTest Programmation_ready RedactionDoc_ready RedactionTest_ready concepteur*3 developpeur*2 machine*4 redacteur testeur*2
+  -Programmation_start->
+  state 3: L.scc*14 Conception_finished ConceptionfinishToFinishRedactionDoc ConceptionfinishToStartProgrammation ConceptionstartToStartRedactionDoc ConceptionstartToStartRedactionTest Programmation_started RedactionDoc_ready RedactionTest_ready concepteur*3 developpeur*2 machine*4 redacteur testeur*2
+  -Programmation_finish->
+  state 4: L.scc*8 Conception_finished ConceptionfinishToFinishRedactionDoc ConceptionfinishToStartProgrammation ConceptionstartToStartRedactionDoc ConceptionstartToStartRedactionTest Programmation_finished ProgrammationfinishToFinishRedactionTest RedactionDoc_ready RedactionTest_ready concepteur*3 developpeur*2 machine*4 redacteur testeur*2
+  -RedactionDoc_start->
+  state 5: L.scc*5 Conception_finished ConceptionfinishToFinishRedactionDoc ConceptionfinishToStartProgrammation ConceptionstartToStartRedactionDoc ConceptionstartToStartRedactionTest Programmation_finished ProgrammationfinishToFinishRedactionTest RedactionDoc_started RedactionTest_ready concepteur*3 developpeur*2 machine*4 redacteur testeur*2
+  -RedactionDoc_finish->
+  state 6: L.scc*2 Conception_finished ConceptionfinishToFinishRedactionDoc ConceptionfinishToStartProgrammation ConceptionstartToStartRedactionDoc ConceptionstartToStartRedactionTest Programmation_finished ProgrammationfinishToFinishRedactionTest RedactionDoc_finished RedactionTest_ready concepteur*3 developpeur*2 machine*4 redacteur testeur*2
+  -RedactionTest_start->
+  state 7: L.scc Conception_finished ConceptionfinishToFinishRedactionDoc ConceptionfinishToStartProgrammation ConceptionstartToStartRedactionDoc ConceptionstartToStartRedactionTest Programmation_finished ProgrammationfinishToFinishRedactionTest RedactionDoc_finished RedactionTest_started concepteur*3 developpeur*2 machine*4 redacteur testeur*2
+  -RedactionTest_finish->
+  state 8: L.dead Conception_finished ConceptionfinishToFinishRedactionDoc ConceptionfinishToStartProgrammation ConceptionstartToStartRedactionDoc ConceptionstartToStartRedactionTest Programmation_finished ProgrammationfinishToFinishRedactionTest RedactionDoc_finished RedactionTest_finished concepteur*3 developpeur*2 machine*4 redacteur testeur*2
+  -L.deadlock->
+  state 9: L.dead Conception_finished ConceptionfinishToFinishRedactionDoc ConceptionfinishToStartProgrammation ConceptionstartToStartRedactionDoc ConceptionstartToStartRedactionTest Programmation_finished ProgrammationfinishToFinishRedactionTest RedactionDoc_finished RedactionTest_finished concepteur*3 developpeur*2 machine*4 redacteur testeur*2
+  [accepting all]
+0.001s
+
+- 
+

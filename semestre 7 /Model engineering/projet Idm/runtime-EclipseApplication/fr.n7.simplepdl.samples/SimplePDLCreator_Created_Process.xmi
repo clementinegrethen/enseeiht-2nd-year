@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<simplepdl:Process xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simplepdl="http://simplepdl" name="Proc&#xe9;d&#xe9; ">
+  <processElements xsi:type="simplepdl:WorkDefinition" linksToSuccessors="//@processElements.4 //@processElements.5 //@processElements.6 //@processElements.7" name="conception"/>
+  <processElements xsi:type="simplepdl:WorkDefinition" linksToPredecessors="//@processElements.4 //@processElements.5" name="RedactionDoc"/>
+  <processElements xsi:type="simplepdl:WorkDefinition" linksToPredecessors="//@processElements.6" linksToSuccessors="//@processElements.8" name="Programmation"/>
+  <processElements xsi:type="simplepdl:WorkDefinition" linksToPredecessors="//@processElements.7 //@processElements.8" name="RedactionTest"/>
+  <processElements xsi:type="simplepdl:WorkSequence" predecessor="//@processElements.0" successor="//@processElements.1"/>
+  <processElements xsi:type="simplepdl:WorkSequence" linkType="finishToFinish" predecessor="//@processElements.0" successor="//@processElements.1"/>
+  <processElements xsi:type="simplepdl:WorkSequence" linkType="finishToStart" predecessor="//@processElements.0" successor="//@processElements.2"/>
+  <processElements xsi:type="simplepdl:WorkSequence" predecessor="//@processElements.0" successor="//@processElements.3"/>
+  <processElements xsi:type="simplepdl:WorkSequence" linkType="finishToFinish" predecessor="//@processElements.2" successor="//@processElements.3"/>
+  <processElements xsi:type="simplepdl:Ressource" name="concepteur" quantite="3"/>
+  <processElements xsi:type="simplepdl:Ressource" name="d&#xe9;veloppeur" quantite="2"/>
+  <processElements xsi:type="simplepdl:Ressource" name="machine" quantite="4"/>
+  <processElements xsi:type="simplepdl:Ressource" name="r&#xe9;dacteur" quantite="1"/>
+  <processElements xsi:type="simplepdl:Ressource" name="testeur" quantite="2"/>
+  <processElements xsi:type="simplepdl:RessourcesRequise" nb="2" ressourceutilise="//@processElements.9" ressourcePredecessor="//@processElements.0"/>
+  <processElements xsi:type="simplepdl:RessourcesRequise" nb="2" ressourceutilise="//@processElements.11" ressourcePredecessor="//@processElements.0"/>
+  <processElements xsi:type="simplepdl:RessourcesRequise" nb="1" ressourceutilise="//@processElements.11" ressourcePredecessor="//@processElements.1"/>
+  <processElements xsi:type="simplepdl:RessourcesRequise" nb="1" ressourceutilise="//@processElements.12" ressourcePredecessor="//@processElements.1"/>
+  <processElements xsi:type="simplepdl:RessourcesRequise" nb="2" ressourceutilise="//@processElements.10" ressourcePredecessor="//@processElements.2"/>
+  <processElements xsi:type="simplepdl:RessourcesRequise" nb="3" ressourceutilise="//@processElements.11" ressourcePredecessor="//@processElements.2"/>
+  <processElements xsi:type="simplepdl:RessourcesRequise" nb="2" ressourceutilise="//@processElements.11" ressourcePredecessor="//@processElements.3"/>
+  <processElements xsi:type="simplepdl:RessourcesRequise" nb="1" ressourceutilise="//@processElements.13" ressourcePredecessor="//@processElements.3"/>
+</simplepdl:Process>

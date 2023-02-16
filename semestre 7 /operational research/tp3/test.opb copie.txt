@@ -1,0 +1,5 @@
+ListPrices= 20 10 ;
+ListWeights= 10 5 ;
+Capacity= 5 ;
+
+

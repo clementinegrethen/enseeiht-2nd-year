@@ -1,0 +1,12 @@
+lweisbecker@lweisbecker-VirtualBox:~/Downloads/tina-3.7.0-amd64-linux/tina-3.7.0/bin$ ./selt -p -S /home/lweisbecker/Documents/idm/projetidm/fr.n7.petrinet.toTina/Models/Procede_inv.scn /home/lweisbecker/Documents/idm/projetidm/fr.n7.petrinet.toTina/Models/Procede.ktz -prelude /home/lweisbecker/Documents/idm/projetidm/fr.n7.simplePDL/modele.processus.inv.ltl 
+Selt version 3.7.0 -- 05/19/22 -- LAAS/CNRS
+ktz loaded, 26 states, 47 transitions
+0.000s
+
+- source /home/lweisbecker/Documents/idm/projetidm/fr.n7.simplePDL/modele.processus.inv.ltl;
+TRUE
+TRUE
+TRUE
+TRUE
+0.001s
+

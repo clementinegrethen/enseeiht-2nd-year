@@ -1,0 +1,22 @@
+main {
+    bool x = true;
+    rat y = [0/1];
+    int z = 0;
+    if x {
+       bool x = true;
+       rat y = [0/1];
+       int z = 0;
+    } 
+    if x {
+       bool x = false;
+       rat y = [0/1];
+       int z = 0;
+    } else {
+       bool x = true;
+       rat y = [0/1];
+       int z = 0;
+    }
+    bool x1 = true;
+    rat y1 = [0/1];
+    int z1 = 0;
+}

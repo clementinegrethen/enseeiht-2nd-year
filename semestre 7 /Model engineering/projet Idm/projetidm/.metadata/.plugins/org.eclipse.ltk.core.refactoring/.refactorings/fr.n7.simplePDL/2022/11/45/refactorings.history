@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;fr.n7.simplePDL/modele.processus.term.atl&apos; to &apos;modele.processus.term.ltl&apos;" description="Rename resource &apos;modele.processus.term.atl&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="modele.processus.term.atl" name="modele.processus.term.ltl" stamp="1668266445691" updateReferences="true"/>
+</session>

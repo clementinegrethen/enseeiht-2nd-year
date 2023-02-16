@@ -1,0 +1,15 @@
+type token =
+    UL_POINTVIRGULE
+  | UL_NAME of string
+  | UL_IDENT of string
+  | UL_FIN
+  | UL_ENTIER of int
+  | UL_EGAL
+  | UL_ACCOUV
+  | UL_ACCFER
+val menhir_begin_marker : int
+val xv_valeur : unit
+val xv_record : unit
+val xv_enregistrement : unit
+val xv_champs : unit
+val menhir_end_marker : int

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.acceleo.ide.ui.launching.launchConfigurationType">
+    <stringAttribute key="org.eclipse.acceleo.ide.ui.ARGUMENTS" value=""/>
+    <booleanAttribute key="org.eclipse.acceleo.ide.ui.COMPUTE_PROFILING" value="false"/>
+    <booleanAttribute key="org.eclipse.acceleo.ide.ui.COMPUTE_TRACEABILITY" value="false"/>
+    <stringAttribute key="org.eclipse.acceleo.ide.ui.LAUNCHING_STRATEGY_DESCRIPTION" value="Java Application"/>
+    <stringAttribute key="org.eclipse.acceleo.ide.ui.MODEL_PATH" value="/fr.n7.petrinet.toTina/Models/netReseauRessource.xmi"/>
+    <stringAttribute key="org.eclipse.acceleo.ide.ui.TARGET_PATH" value="/fr.n7.petrinet.toTina/Models"/>
+    <booleanAttribute key="org.eclipse.debug.core.ATTR_FORCE_SYSTEM_CONSOLE_ENCODING" value="false"/>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+        <listEntry value="/fr.n7.petrinet.toTina/src/fr/n7/petrinet/toTina/main/ToTina.java"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+        <listEntry value="1"/>
+    </listAttribute>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_ATTR_USE_ARGFILE" value="false"/>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_SHOW_CODEDETAILS_IN_EXCEPTION_MESSAGES" value="true"/>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_CLASSPATH_ONLY_JAR" value="false"/>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="fr.n7.petrinet.toTina.main.ToTina"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="fr.n7.petrinet.toTina"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="&quot;/Users/clementinegrethen/Documents/2A/blockchain/projetidm/fr.n7.petrinet.toTina/Models/netReseauRessource.xmi&quot; &quot;/Users/clementinegrethen/Documents/2A/blockchain/projetidm/fr.n7.petrinet.toTina/Models&quot;"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="fr.n7.petrinet.toTina"/>
+</launchConfiguration>

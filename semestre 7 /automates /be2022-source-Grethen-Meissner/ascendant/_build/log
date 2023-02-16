@@ -1,0 +1,123 @@
+# dune build
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Workspace root: /Users/clementinegrethen/Downloads/be2021-source/ascendant
+# Auto-detected concurrency: 8
+$ /Users/clementinegrethen/.opam/4.12.0/bin/ocamlc.opt -config > /var/folders/kp/kz6gq6pd5rg0fhh1mw3bxnzm0000gn/T/dune_08aea9_output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ; toplevel_path =
+#      Some External "/Users/clementinegrethen/.opam/4.12.0/lib/toplevel"
+#  ; ocaml_bin = External "/Users/clementinegrethen/.opam/4.12.0/bin"
+#  ; ocaml = Ok External "/Users/clementinegrethen/.opam/4.12.0/bin/ocaml"
+#  ; ocamlc = External "/Users/clementinegrethen/.opam/4.12.0/bin/ocamlc.opt"
+#  ; ocamlopt =
+#      Ok External "/Users/clementinegrethen/.opam/4.12.0/bin/ocamlopt.opt"
+#  ; ocamldep =
+#      Ok External "/Users/clementinegrethen/.opam/4.12.0/bin/ocamldep.opt"
+#  ; ocamlmklib =
+#      Ok External "/Users/clementinegrethen/.opam/4.12.0/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" : "/Users/clementinegrethen/.opam/4.12.0/lib"
+#        ; "DUNE_OCAML_STDLIB" :
+#            "/Users/clementinegrethen/.opam/4.12.0/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" :
+#            "/Users/clementinegrethen/Downloads/be2021-source/ascendant"
+#        ; "INSIDE_DUNE" :
+#            "/Users/clementinegrethen/Downloads/be2021-source/ascendant/_build/default"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/Users/clementinegrethen/Downloads/be2021-source/ascendant/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/Users/clementinegrethen/Downloads/be2021-source/ascendant/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/Users/clementinegrethen/Downloads/be2021-source/ascendant/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_paths = [ External "/Users/clementinegrethen/.opam/4.12.0/lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.12.0"
+#      ; standard_library_default =
+#          "/Users/clementinegrethen/.opam/4.12.0/lib/ocaml"
+#      ; standard_library = "/Users/clementinegrethen/.opam/4.12.0/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "cc"
+#      ; ocamlc_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; ocamlopt_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; bytecomp_c_compiler =
+#          [ "cc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "cc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; native_c_libraries = [ "-lm" ]
+#      ; native_pack_linker = [ "ld"; "-r"; "-o" ]
+#      ; cc_profile = []
+#      ; architecture = "arm64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "macosx"
+#      ; asm = [ "clang"; "-c"; "-Wno-trigraphs" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "aarch64-apple-darwin21.6.0"
+#      ; target = "aarch64-apple-darwin21.6.0"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X029"
+#      ; cmi_magic_number = "Caml1999I029"
+#      ; cmo_magic_number = "Caml1999O029"
+#      ; cma_magic_number = "Caml1999A029"
+#      ; cmx_magic_number = "Caml1999Y029"
+#      ; cmxa_magic_number = "Caml1999Z029"
+#      ; ast_impl_magic_number = "Caml1999M029"
+#      ; ast_intf_magic_number = "Caml1999N029"
+#      ; cmxs_magic_number = "Caml1999D029"
+#      ; cmt_magic_number = "Caml1999T029"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/default && /Users/clementinegrethen/.opam/4.12.0/bin/menhir Parser.mly --base Parser --infer-write-query Parser__mock.ml.mock)
+$ (cd _build/default && /Users/clementinegrethen/.opam/4.12.0/bin/ocamldep.opt -modules -impl Parser__mock.ml.mock) > _build/default/.MainRecord.eobjs/Parser__mock.ml.mock.d
+$ (cd _build/.sandbox/956fa8cb2fbe8f267df46e2c3e49a3c5/default && /Users/clementinegrethen/.opam/4.12.0/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I .MainRecord.eobjs/byte -open Dune__exe -short-paths -i -impl Parser__mock.ml.mock) > _build/.sandbox/956fa8cb2fbe8f267df46e2c3e49a3c5/default/Parser__mock.mli.inferred
+$ (cd _build/default && /Users/clementinegrethen/.opam/4.12.0/bin/menhir Parser.mly --base Parser --infer-read-reply Parser__mock.mli.inferred)
+$ (cd _build/default && /Users/clementinegrethen/.opam/4.12.0/bin/ocamldep.opt -modules -impl Parser.ml) > _build/default/.MainRecord.eobjs/Parser.ml.d
+$ (cd _build/default && /Users/clementinegrethen/.opam/4.12.0/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I .MainRecord.eobjs/byte -I .MainRecord.eobjs/native -intf-suffix .ml -no-alias-deps -opaque -open Dune__exe -o .MainRecord.eobjs/native/dune__exe__Parser.cmx -c -impl Parser.ml)
+$ (cd _build/default && /Users/clementinegrethen/.opam/4.12.0/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -o MainRecord.exe .MainRecord.eobjs/native/dune__exe.cmx .MainRecord.eobjs/native/dune__exe__Parser.cmx .MainRecord.eobjs/native/dune__exe__Lexer.cmx .MainRecord.eobjs/native/dune__exe__MainRecord.cmx)

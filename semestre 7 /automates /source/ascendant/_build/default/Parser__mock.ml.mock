@@ -1,0 +1,75 @@
+
+type token = 
+  | UL_VIRG
+  | UL_VARIABLE of (
+# 17 "Parser.mly"
+       (string)
+# 8 "Parser__mock.ml.mock"
+)
+  | UL_SYMBOLE of (
+# 16 "Parser.mly"
+       (string)
+# 13 "Parser__mock.ml.mock"
+)
+  | UL_PT
+  | UL_PAROUV
+  | UL_PARFER
+  | UL_FIN
+
+# 1 "Parser.mly"
+  
+
+(* Partie recopiee dans le fichier CaML genere. *)
+(* Ouverture de modules exploites dans les actions *)
+(* Declarations de types, de constantes, de fonctions, d'exceptions exploites dans les actions *)
+
+
+# 28 "Parser__mock.ml.mock"
+
+let menhir_begin_marker =
+  0
+
+and (xv_suite_regle, xv_regle, xv_programme) =
+  let _ = fun (_startpos : Lexing.position) (_endpos : Lexing.position) (_endpos__0_ : Lexing.position) (_symbolstartpos : Lexing.position) (_startofs : int) (_endofs : int) (_endofs__0_ : int) (_symbolstartofs : int) (_sloc : Lexing.position * Lexing.position) (_loc : Lexing.position * Lexing.position) ->
+    (
+# 35 "Parser.mly"
+              ( (print_endline "suite_regle : A COMPLETER") )
+# 38 "Parser__mock.ml.mock"
+     : 'tv_suite_regle) in
+  let _ = fun (_startpos : Lexing.position) (_endpos : Lexing.position) (_endpos__0_ : Lexing.position) (_symbolstartpos : Lexing.position) (_startofs : int) (_endofs : int) (_endofs__0_ : int) (_symbolstartofs : int) (_sloc : Lexing.position * Lexing.position) (_loc : Lexing.position * Lexing.position) ->
+    (
+# 33 "Parser.mly"
+        ( (print_endline "regle : A COMPLETER") )
+# 44 "Parser__mock.ml.mock"
+     : 'tv_regle) in
+  let _ = fun (_startpos : Lexing.position) (_endpos : Lexing.position) (_endpos__0_ : Lexing.position) (_symbolstartpos : Lexing.position) (_startofs : int) (_endofs : int) (_endofs__0_ : int) (_symbolstartofs : int) (_sloc : Lexing.position * Lexing.position) (_loc : Lexing.position * Lexing.position) (
+# 31 "Parser.mly"
+                             _3
+# 49 "Parser__mock.ml.mock"
+   : unit) (_startpos__3_ : Lexing.position) (_endpos__3_ : Lexing.position) (_startofs__3_ : int) (_endofs__3_ : int) (_loc__3_ : Lexing.position * Lexing.position) (
+# 31 "Parser.mly"
+                 _2
+# 53 "Parser__mock.ml.mock"
+   : 'tv_suite_regle) (_startpos__2_ : Lexing.position) (_endpos__2_ : Lexing.position) (_startofs__2_ : int) (_endofs__2_ : int) (_loc__2_ : Lexing.position * Lexing.position) (
+# 31 "Parser.mly"
+           _1
+# 57 "Parser__mock.ml.mock"
+   : 'tv_regle) (_startpos__1_ : Lexing.position) (_endpos__1_ : Lexing.position) (_startofs__1_ : int) (_endofs__1_ : int) (_loc__1_ : Lexing.position * Lexing.position) ->
+    ((
+# 31 "Parser.mly"
+                                     ( (print_endline "programme : regle suite_regle FIN ") )
+# 62 "Parser__mock.ml.mock"
+     : 'tv_programme) : (
+# 24 "Parser.mly"
+      (unit)
+# 66 "Parser__mock.ml.mock"
+    )) in
+  ((let rec diverge() = diverge() in diverge()) : 'tv_suite_regle * 'tv_regle * 'tv_programme)
+
+and menhir_end_marker =
+  0
+
+# 37 "Parser.mly"
+  
+
+# 76 "Parser__mock.ml.mock"

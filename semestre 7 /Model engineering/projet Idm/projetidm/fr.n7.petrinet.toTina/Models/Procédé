@@ -1,0 +1,38 @@
+
+
+net Procédé 
+		pl conception_ready (1)
+		pl conception_started (0)
+		pl conception_finished (0)
+		pl RedactionDoc_ready (1)
+		pl RedactionDoc_started (0)
+		pl RedactionDoc_finished (0)
+		pl Programmation_ready (1)
+		pl Programmation_started (0)
+		pl Programmation_finished (0)
+		pl RedactionTest_ready (1)
+		pl RedactionTest_started (0)
+		pl RedactionTest_finished (0)
+		pl conceptionstartToStartRedactionDoc (0)
+		pl conceptionfinishToFinishRedactionDoc (0)
+		pl conceptionfinishToStartProgrammation (0)
+		pl conceptionstartToStartRedactionTest (0)
+		pl ProgrammationfinishToFinishRedactionTest (0)
+		pl concepteur (3)
+		pl développeur (2)
+		pl machine (4)
+		pl rédacteur (1)
+		pl testeur (2)
+		tr conception_start   conception_ready      concepteur    *2    machine    *2    -> conception_started conceptionstartToStartRedactionDoc conceptionstartToStartRedactionTest
+		tr conception_finish   conception_started      -> conception_finished conceptionfinishToFinishRedactionDoc conceptionfinishToStartProgrammation concepteur *2
+		machine *2
+		tr RedactionDoc_start   RedactionDoc_ready      conceptionstartToStartRedactionDoc   ?1   machine      rédacteur      -> RedactionDoc_started
+		tr RedactionDoc_finish   RedactionDoc_started      conceptionfinishToFinishRedactionDoc   ?1   -> RedactionDoc_finished machine rédacteur
+		tr Programmation_start   Programmation_ready      conceptionfinishToStartProgrammation   ?1   développeur    *2    machine    *3    -> Programmation_started
+		tr Programmation_finish   Programmation_started      -> Programmation_finished ProgrammationfinishToFinishRedactionTest développeur *2
+		machine *3
+		tr RedactionTest_start   RedactionTest_ready      conceptionstartToStartRedactionTest   ?1   machine    *2    testeur      -> RedactionTest_started
+		tr RedactionTest_finish   RedactionTest_started      ProgrammationfinishToFinishRedactionTest   ?1   -> RedactionTest_finished machine *2
+		testeur
+
+

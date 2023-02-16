@@ -1,0 +1,143 @@
+# dune runtest tests/type
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Workspace root: "/Users/clementinegrethen/Documents/2A/traduction des
+# lanages/sourceEtu2V2"
+# Auto-detected concurrency: 8
+$ /Users/clementinegrethen/.opam/4.12.0/bin/ocamlc.opt -config > /var/folders/kp/kz6gq6pd5rg0fhh1mw3bxnzm0000gn/T/dune_9ce502_output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ; toplevel_path =
+#      Some External "/Users/clementinegrethen/.opam/4.12.0/lib/toplevel"
+#  ; ocaml_bin = External "/Users/clementinegrethen/.opam/4.12.0/bin"
+#  ; ocaml = Ok External "/Users/clementinegrethen/.opam/4.12.0/bin/ocaml"
+#  ; ocamlc = External "/Users/clementinegrethen/.opam/4.12.0/bin/ocamlc.opt"
+#  ; ocamlopt =
+#      Ok External "/Users/clementinegrethen/.opam/4.12.0/bin/ocamlopt.opt"
+#  ; ocamldep =
+#      Ok External "/Users/clementinegrethen/.opam/4.12.0/bin/ocamldep.opt"
+#  ; ocamlmklib =
+#      Ok External "/Users/clementinegrethen/.opam/4.12.0/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" : "/Users/clementinegrethen/.opam/4.12.0/lib"
+#        ; "DUNE_OCAML_STDLIB" :
+#            "/Users/clementinegrethen/.opam/4.12.0/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" :
+#            "/Users/clementinegrethen/Documents/2A/traduction des lanages/sourceEtu2V2"
+#        ; "INSIDE_DUNE" :
+#            "/Users/clementinegrethen/Documents/2A/traduction des lanages/sourceEtu2V2/_build/default"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/Users/clementinegrethen/Documents/2A/traduction des lanages/sourceEtu2V2/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/Users/clementinegrethen/Documents/2A/traduction des lanages/sourceEtu2V2/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/Users/clementinegrethen/Documents/2A/traduction des lanages/sourceEtu2V2/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_paths = [ External "/Users/clementinegrethen/.opam/4.12.0/lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.12.0"
+#      ; standard_library_default =
+#          "/Users/clementinegrethen/.opam/4.12.0/lib/ocaml"
+#      ; standard_library = "/Users/clementinegrethen/.opam/4.12.0/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "cc"
+#      ; ocamlc_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; ocamlopt_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; bytecomp_c_compiler =
+#          [ "cc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "cc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; native_c_libraries = [ "-lm" ]
+#      ; native_pack_linker = [ "ld"; "-r"; "-o" ]
+#      ; cc_profile = []
+#      ; architecture = "arm64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "macosx"
+#      ; asm = [ "clang"; "-c"; "-Wno-trigraphs" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "aarch64-apple-darwin21.6.0"
+#      ; target = "aarch64-apple-darwin21.6.0"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X029"
+#      ; cmi_magic_number = "Caml1999I029"
+#      ; cmo_magic_number = "Caml1999O029"
+#      ; cma_magic_number = "Caml1999A029"
+#      ; cmx_magic_number = "Caml1999Y029"
+#      ; cmxa_magic_number = "Caml1999Z029"
+#      ; ast_impl_magic_number = "Caml1999M029"
+#      ; ast_intf_magic_number = "Caml1999N029"
+#      ; cmxs_magic_number = "Caml1999D029"
+#      ; cmt_magic_number = "Caml1999T029"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/default && /Users/clementinegrethen/.opam/4.12.0/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I .rat.objs/byte -I /Users/clementinegrethen/.opam/4.12.0/lib/base -I /Users/clementinegrethen/.opam/4.12.0/lib/base/base_internalhash_types -I /Users/clementinegrethen/.opam/4.12.0/lib/base/caml -I /Users/clementinegrethen/.opam/4.12.0/lib/base/shadow_stdlib -I /Users/clementinegrethen/.opam/4.12.0/lib/jane-street-headers -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_compare/runtime-lib -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_enumerate/runtime-lib -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_expect/collector -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_expect/common -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_expect/config -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_expect/config_types -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_hash/runtime-lib -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_here/runtime-lib -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_inline_test/config -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_inline_test/runtime-lib -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_sexp_conv/runtime-lib -I /Users/clementinegrethen/.opam/4.12.0/lib/sexplib0 -I /Users/clementinegrethen/.opam/4.12.0/lib/time_now -no-alias-deps -opaque -open Rat -o .rat.objs/byte/rat__PassePlacementRat.cmo -c -impl passePlacementRat.pp.ml)
+> File "passePlacementRat.ml", line 55, characters 119-120:
+> 55 |     | AstType.SwitchCase(_,l) -> let nl = List.map (fun (e,b) -> let nb = analyse_placement_bloc b depl reg in (e,nb)) l in
+>                                                                                                                             ^
+> Error: This expression has type
+>          (AstType.expression * AstType.bloc * AstType.expression) list
+>        but an expression was expected of type ('a * AstType.bloc) list
+>        Type AstType.expression * AstType.bloc * AstType.expression
+>        is not compatible with type 'a * AstType.bloc 
+[2]
+$ (cd _build/default && /Users/clementinegrethen/.opam/4.12.0/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I .rat.objs/byte -I /Users/clementinegrethen/.opam/4.12.0/lib/base -I /Users/clementinegrethen/.opam/4.12.0/lib/base/base_internalhash_types -I /Users/clementinegrethen/.opam/4.12.0/lib/base/caml -I /Users/clementinegrethen/.opam/4.12.0/lib/base/shadow_stdlib -I /Users/clementinegrethen/.opam/4.12.0/lib/jane-street-headers -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_compare/runtime-lib -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_enumerate/runtime-lib -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_expect/collector -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_expect/common -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_expect/config -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_expect/config_types -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_hash/runtime-lib -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_here/runtime-lib -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_inline_test/config -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_inline_test/runtime-lib -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_sexp_conv/runtime-lib -I /Users/clementinegrethen/.opam/4.12.0/lib/sexplib0 -I /Users/clementinegrethen/.opam/4.12.0/lib/time_now -no-alias-deps -opaque -open Rat -o .rat.objs/byte/rat__PasseTypeRat.cmo -c -impl passeTypeRat.pp.ml)
+> File "passeTypeRat.ml", line 182, characters 60-63:
+> 182 |     List.iter (fun x -> if (not (est_compatible te x) && x!=Def)  then raise (TypeInattendu(te,x))) nltc;
+>                                                                   ^^^
+> Error: This variant expression is expected to have type typ
+>        The constructor Def does not belong to type typ
+[2]
+$ (cd _build/default && /Users/clementinegrethen/.opam/4.12.0/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I .rat.objs/byte -I /Users/clementinegrethen/.opam/4.12.0/lib/base -I /Users/clementinegrethen/.opam/4.12.0/lib/base/base_internalhash_types -I /Users/clementinegrethen/.opam/4.12.0/lib/base/caml -I /Users/clementinegrethen/.opam/4.12.0/lib/base/shadow_stdlib -I /Users/clementinegrethen/.opam/4.12.0/lib/jane-street-headers -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_compare/runtime-lib -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_enumerate/runtime-lib -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_expect/collector -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_expect/common -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_expect/config -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_expect/config_types -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_hash/runtime-lib -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_here/runtime-lib -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_inline_test/config -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_inline_test/runtime-lib -I /Users/clementinegrethen/.opam/4.12.0/lib/ppx_sexp_conv/runtime-lib -I /Users/clementinegrethen/.opam/4.12.0/lib/sexplib0 -I /Users/clementinegrethen/.opam/4.12.0/lib/time_now -no-alias-deps -opaque -open Rat -o .rat.objs/byte/rat__PasseTdsRat.cmo -c -impl passeTdsRat.pp.ml)
+> File "passeTdsRat.ml", line 326, characters 53-56:
+> 326 |           let nlli = List.map (analyse_tds_bloc tds) lli in
+>                                                            ^^^
+> Error: This expression has type AstSyntax.bloc list
+>        but an expression was expected of type info_ast option list
+>        Type AstSyntax.bloc = AstSyntax.instruction list
+>        is not compatible with type info_ast option 
+[2]

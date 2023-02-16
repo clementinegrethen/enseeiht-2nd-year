@@ -1,0 +1,2 @@
+(** @canonical Avec_fonction_placement.Test *)
+module Test = Avec_fonction_placement__Test

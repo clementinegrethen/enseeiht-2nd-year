@@ -1,0 +1,10 @@
+(** @canonical Dune__exe.Lexer *)
+module Lexer = Dune__exe__Lexer
+
+
+(** @canonical Dune__exe.MainRecord *)
+module MainRecord = Dune__exe__MainRecord
+
+
+(** @canonical Dune__exe.Parser *)
+module Parser = Dune__exe__Parser
