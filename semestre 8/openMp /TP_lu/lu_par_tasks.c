@@ -2,7 +2,7 @@
 #include "common.h"
 #include <omp.h>
 
-ll
+llth
 
 
 /* This is a sequential routine for the LU factorization of a square
