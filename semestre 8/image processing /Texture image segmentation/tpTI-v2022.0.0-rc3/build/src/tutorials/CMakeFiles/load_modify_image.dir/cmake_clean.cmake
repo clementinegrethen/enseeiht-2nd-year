@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "../../bin/load_modify_image"
   "../../bin/load_modify_image.pdb"
   "CMakeFiles/load_modify_image.dir/load_modify_image.cpp.o"
+  "CMakeFiles/load_modify_image.dir/load_modify_image.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.
