@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named kmeans
+
+# Build rule for target.
+kmeans: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kmeans
+.PHONY : kmeans
+
+# fast build rule for target.
+kmeans/fast:
+	$(MAKE) $(MAKESILENT) -f src/tp/CMakeFiles/kmeans.dir/build.make src/tp/CMakeFiles/kmeans.dir/build
+.PHONY : kmeans/fast
+
+#=============================================================================
 # Target rules for targets named meanshift
 
 # Build rule for target.
@@ -191,6 +204,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... tutorials"
 	@echo "... display_image"
+	@echo "... kmeans"
 	@echo "... load_modify_image"
 	@echo "... mat_the_basic_image_container"
 	@echo "... meanshift"

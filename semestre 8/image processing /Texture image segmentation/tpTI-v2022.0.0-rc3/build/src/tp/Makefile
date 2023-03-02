@@ -117,6 +117,20 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+src/tp/CMakeFiles/kmeans.dir/rule:
+	cd "/Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/image processing /Texture image segmentation/tpTI-v2022.0.0-rc3/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/tp/CMakeFiles/kmeans.dir/rule
+.PHONY : src/tp/CMakeFiles/kmeans.dir/rule
+
+# Convenience name for target.
+kmeans: src/tp/CMakeFiles/kmeans.dir/rule
+.PHONY : kmeans
+
+# fast build rule for target.
+kmeans/fast:
+	cd "/Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/image processing /Texture image segmentation/tpTI-v2022.0.0-rc3/build" && $(MAKE) $(MAKESILENT) -f src/tp/CMakeFiles/kmeans.dir/build.make src/tp/CMakeFiles/kmeans.dir/build
+.PHONY : kmeans/fast
+
+# Convenience name for target.
 src/tp/CMakeFiles/meanshift.dir/rule:
 	cd "/Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/image processing /Texture image segmentation/tpTI-v2022.0.0-rc3/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/tp/CMakeFiles/meanshift.dir/rule
 .PHONY : src/tp/CMakeFiles/meanshift.dir/rule
@@ -129,6 +143,30 @@ meanshift: src/tp/CMakeFiles/meanshift.dir/rule
 meanshift/fast:
 	cd "/Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/image processing /Texture image segmentation/tpTI-v2022.0.0-rc3/build" && $(MAKE) $(MAKESILENT) -f src/tp/CMakeFiles/meanshift.dir/build.make src/tp/CMakeFiles/meanshift.dir/build
 .PHONY : meanshift/fast
+
+kmeans.o: kmeans.cpp.o
+.PHONY : kmeans.o
+
+# target to build an object file
+kmeans.cpp.o:
+	cd "/Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/image processing /Texture image segmentation/tpTI-v2022.0.0-rc3/build" && $(MAKE) $(MAKESILENT) -f src/tp/CMakeFiles/kmeans.dir/build.make src/tp/CMakeFiles/kmeans.dir/kmeans.cpp.o
+.PHONY : kmeans.cpp.o
+
+kmeans.i: kmeans.cpp.i
+.PHONY : kmeans.i
+
+# target to preprocess a source file
+kmeans.cpp.i:
+	cd "/Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/image processing /Texture image segmentation/tpTI-v2022.0.0-rc3/build" && $(MAKE) $(MAKESILENT) -f src/tp/CMakeFiles/kmeans.dir/build.make src/tp/CMakeFiles/kmeans.dir/kmeans.cpp.i
+.PHONY : kmeans.cpp.i
+
+kmeans.s: kmeans.cpp.s
+.PHONY : kmeans.s
+
+# target to generate assembly for a file
+kmeans.cpp.s:
+	cd "/Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/image processing /Texture image segmentation/tpTI-v2022.0.0-rc3/build" && $(MAKE) $(MAKESILENT) -f src/tp/CMakeFiles/kmeans.dir/build.make src/tp/CMakeFiles/kmeans.dir/kmeans.cpp.s
+.PHONY : kmeans.cpp.s
 
 meanshift.o: meanshift.cpp.o
 .PHONY : meanshift.o
@@ -159,6 +197,7 @@ ocv_utils.o: ocv_utils.cpp.o
 
 # target to build an object file
 ocv_utils.cpp.o:
+	cd "/Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/image processing /Texture image segmentation/tpTI-v2022.0.0-rc3/build" && $(MAKE) $(MAKESILENT) -f src/tp/CMakeFiles/kmeans.dir/build.make src/tp/CMakeFiles/kmeans.dir/ocv_utils.cpp.o
 	cd "/Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/image processing /Texture image segmentation/tpTI-v2022.0.0-rc3/build" && $(MAKE) $(MAKESILENT) -f src/tp/CMakeFiles/meanshift.dir/build.make src/tp/CMakeFiles/meanshift.dir/ocv_utils.cpp.o
 .PHONY : ocv_utils.cpp.o
 
@@ -167,6 +206,7 @@ ocv_utils.i: ocv_utils.cpp.i
 
 # target to preprocess a source file
 ocv_utils.cpp.i:
+	cd "/Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/image processing /Texture image segmentation/tpTI-v2022.0.0-rc3/build" && $(MAKE) $(MAKESILENT) -f src/tp/CMakeFiles/kmeans.dir/build.make src/tp/CMakeFiles/kmeans.dir/ocv_utils.cpp.i
 	cd "/Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/image processing /Texture image segmentation/tpTI-v2022.0.0-rc3/build" && $(MAKE) $(MAKESILENT) -f src/tp/CMakeFiles/meanshift.dir/build.make src/tp/CMakeFiles/meanshift.dir/ocv_utils.cpp.i
 .PHONY : ocv_utils.cpp.i
 
@@ -175,6 +215,7 @@ ocv_utils.s: ocv_utils.cpp.s
 
 # target to generate assembly for a file
 ocv_utils.cpp.s:
+	cd "/Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/image processing /Texture image segmentation/tpTI-v2022.0.0-rc3/build" && $(MAKE) $(MAKESILENT) -f src/tp/CMakeFiles/kmeans.dir/build.make src/tp/CMakeFiles/kmeans.dir/ocv_utils.cpp.s
 	cd "/Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/image processing /Texture image segmentation/tpTI-v2022.0.0-rc3/build" && $(MAKE) $(MAKESILENT) -f src/tp/CMakeFiles/meanshift.dir/build.make src/tp/CMakeFiles/meanshift.dir/ocv_utils.cpp.s
 .PHONY : ocv_utils.cpp.s
 
@@ -186,7 +227,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... kmeans"
 	@echo "... meanshift"
+	@echo "... kmeans.o"
+	@echo "... kmeans.i"
+	@echo "... kmeans.s"
 	@echo "... meanshift.o"
 	@echo "... meanshift.i"
 	@echo "... meanshift.s"

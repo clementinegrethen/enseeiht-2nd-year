@@ -2,6 +2,7 @@
 /Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/image processing /Texture image segmentation/tpTI-v2022.0.0-rc3/build/CMakeFiles/rebuild_cache.dir
 /Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/image processing /Texture image segmentation/tpTI-v2022.0.0-rc3/build/src/CMakeFiles/edit_cache.dir
 /Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/image processing /Texture image segmentation/tpTI-v2022.0.0-rc3/build/src/CMakeFiles/rebuild_cache.dir
+/Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/image processing /Texture image segmentation/tpTI-v2022.0.0-rc3/build/src/tp/CMakeFiles/kmeans.dir
 /Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/image processing /Texture image segmentation/tpTI-v2022.0.0-rc3/build/src/tp/CMakeFiles/meanshift.dir
 /Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/image processing /Texture image segmentation/tpTI-v2022.0.0-rc3/build/src/tp/CMakeFiles/edit_cache.dir
 /Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/image processing /Texture image segmentation/tpTI-v2022.0.0-rc3/build/src/tp/CMakeFiles/rebuild_cache.dir

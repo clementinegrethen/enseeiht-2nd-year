@@ -1,3 +1,4 @@
+
 #include "ocv_utils.hpp"
 
 #include <opencv2/core.hpp>
@@ -11,195 +12,182 @@
 
 using namespace cv;
 using namespace std;
-#include <iostream>
-#include <vector>
 
-using namespace std;
 
-Mat submatrix(Mat& matrix, int li,int co, int n,int hc) {
-    int start_row = max(0, li - n);          // Ligne de départ de la sous-matrice
-    int end_row = min(matrix.rows - 1, li + n);    // Ligne de fin de la sous-matrice
-    int start_col = max(0, co - n);          // Colonne de départ de la sous-matrice
-    int end_col = min(matrix.cols - 1, co + n); // Colonne de fin de la sous-matrice
-
-    // Si la sous-matrice de taille (2n+1)x(2n+1) existe dans la matrice, l'extraire et la renvoyer
-    if (start_row <= end_row && start_col <= end_col) {
-
-        Mat submatrix;
-
-        // Parcourir les lignes de la matrice originale
-        for (int i = start_row; i <= end_row; i++) {
-            std::vector<cv::Vec3b> row;
-
-            // Parcourir les colonnes de la matrice originale
-            for (int j = start_col; j <= end_col; j++) {
-                row.push_back(matrix.at<cv::Vec3b>(i, j));
-            }
-
-            submatrix.push_back(row);
-        }
-
-    // éliminer les points qui ont une couleur trop différente de x 
-        for (int i = 0; i < submatrix.rows; i++) {
-            for (int j = 0; j < submatrix.cols; j++) {
-                if (abs(submatrix.at<cv::Vec3b>(i, j)[0] -matrix.at<cv::Vec3b>(li, co)[0]) > hc) {
-
-                    submatrix.at<int>(i, j) = -1;
-                }
-            }
-        }
-
-            return submatrix;
-
-    }
-    // Sinon, renvoyer la plus grande sous-matrice possible centrée sur x
-    else {
-        int size = std::min(matrix.rows, matrix.cols);
-        int max_n = (size - 1) / 2;
-        start_row = li - max_n;
-        end_row = li + max_n;
-        start_col = co - max_n;
-        end_col = co + max_n;
-
-        Mat submatrix;
-
-        // Parcourir les lignes de la matrice originale
-        for (int i = start_row; i <= end_row; i++) {
-            std::vector<cv::Vec3b> row;
-
-            // Parcourir les colonnes de la matrice originale
-            for (int j = start_col; j <= end_col; j++) {
-                if (i >= 0 && i < matrix.rows && j >= 0 && j < matrix.cols) {
-                    row.push_back(matrix.at<cv::Vec3b>(i, j));
-                }
-            }
-
-            submatrix.push_back(row);
-        }
-        // éliminer les points qui ont une couleur trop différente de x 
-        for (int i = 0; i < submatrix.rows; i++) {
-            for (int j = 0; j < submatrix.cols; j++) {
-                if (abs(submatrix.at<cv::Vec3b>(i, j)[0] -matrix.at<cv::Vec3b>(li, co)[0]) > hc) {
-                    submatrix.at<int>(i, j) = -1;
-                }
-            }
-        }
-            return submatrix;
-        
-    }
-
-    
-
+void printHelp(const string& progName)
+{
+    cout << "Usage:\n\t " << progName << " <image_file> [<image_ground_truth>]" << endl;
 }
 
+// Algorithme de notre implémentation de mean-shift
+// fonction meanshift : réalise l'algorithme meanshift sur une image
+// Données en entrée  : data : image à segmenter
+//                      result : image segmentée
+//                      termcrit : critère d'arrêt
+//                      spatialRad : rayon spatial
+//                      colorRad : rayon de couleur
 
-
-void meanshift( Mat& m, int hs, int hc, int eps, int max) {
-    // segmentation alogirthme mean-shift 
-    int k = 1;
-    bool convergence = false;
-    // mean-shift algorithm
-    // vecteur pour stocker les différences entre les pixels et la moyenne
-        std::vector<cv::Vec3b> diff  ;  
-        while(!convergence){
-        for(int i = 0; i < m.rows; i++){
-            for (int j = 0; j <m.cols ; j++){
-                //Obtentions de Sh(x)
-                Mat Sh = submatrix(m, i,j, hs, hc);
-
-                //Calcul de la moyenne des pixels de Sh(x)
-                int moyenne = 0;
-                int nb = 0;
-                for (int i = 0; i < Sh.rows; i++) {
-                    for (int j = 0; j < Sh.cols; j++) {
-                        if (Sh.at<float>(i, j) != -1) {
-                            moyenne += Sh.at<float>(i, j);
-                            nb++;
-                        }
-                    
+void meanshift(Mat& data, Mat& result, TermCriteria termcrit, int spatialRad, int colorRad)
+{   
+    
+    // on redimensionne data pour qu'il soit un vecteur de pixels 
+    data.reshape(1, data.rows * data.cols);
+    // result prend la valeur de data
+    result = data.clone();
+    // on parcourt tous les pixels de data
+    for (int i = 0; i < data.total(); i++) { 
+        // on récupère le pixel i, 
+        Vec3b pixel = result.at<Vec3b>(i);
+        // on initialise le mode à pixel
+        Vec3b mode = pixel;
+        bool converged = false;
+        while (!converged) {
+            // on calcule la moyenne des pixels voisins de pixel c'est à dire les pixels qui sont dans le rayon spatial et qui ont une couleur proche de pixel
+            Vec3i sum (0, 0, 0);
+            int count = 0;
+            for (int x = -spatialRad; x <= spatialRad; x++) {
+                for (int y = -spatialRad; y <= spatialRad; y++) {
+                    // on récupère l'index du pixel voisin (data est un vecteur de pixels)
+                    int index = i + x + y * data.cols;
+                    // on vérifie que l'index est valide : si il ne l'est pas, on passe au pixel suivant
+                    if (index < 0 || index >= data.total()) {
+                        continue;
+                    }
+                    // on récupère le pixel voisin
+                    Vec3b voisin = result.at<Vec3b>(index);
+                    // on vérifie que le pixel voisin est dans le rayon de couleur (appartenance à Sh(x))
+                    if (norm(Vec3i(pixel) - Vec3i(voisin)) < colorRad) {
+                        // on ajoute le pixel voisin à la somme
+                        sum += Vec3i(voisin);
+                        count++;
                     }
                 }
-                moyenne = moyenne / nb; 
-                //Calcul de la différence entre le pixel et la moyenne
-                if (abs(m.at<float>(i, j) - moyenne) > eps) {
-                    diff.push_back(1);
-
-                }
-                else {
-                    diff.push_back(0);
-                }
-                // x prend la valeur de la moyenne
-                    m.at<float>(i, j) = moyenne;
-    
             }
-
+            // on calcule le mode
+            mode = Vec3b(sum / count);
+            Vec3b shift = mode - pixel;
+            // on vérifie si le critère d'arrêt est atteint
+            if (norm(shift) < termcrit.epsilon) {
+                converged = true;
+            // sinon on déplace le pixel vers le mode
+            } else {
+                pixel += shift;
+            }
         }
-        //k++
-        k++;
-        // vérification de la convergence: il existe au moins un pixel dont la différence est supérieure à eps et k < max
-        if (diff.size() == 0 || k > 2) {
-            convergence = true;
-        }
-        else {
-            diff.clear();
-        }
-       
-
-    
-    
+        // on affecte le mode au pixel i de result
+        result.at<Vec3b>(i) = mode;
+        // on passe au pixel suivant
     }
-        cout << "k = " << k << endl;
-
-        return;
-
-}
-
-    
-void printHelp(const string& progName)
-
-{
-    cout << "Usage:\n\t " << progName << " <image_file> <K_num_of_clusters> [<image_ground_truth>]" << endl;
+    //result.reshape(3, data.rows);
+    return;
 }
 
 int main(int argc, char** argv)
 {
+ 
+    if (argc != 2 && argc != 3)
+    {
+        cout << " Incorrect number of arguments." << endl;
+        printHelp(string(argv[0]));
+        return EXIT_FAILURE;
+    }
 
     const auto imageFilename = string(argv[1]);
-     const string groundTruthFilename = (argc == 4) ? string(argv[3]) : string();
+    const string groundTruthFilename = (argc == 3) ? string(argv[2]) : string();
 
 
-    //just for debugging
+    // just for debugging
     {
         cout << " Program called with the following arguments:" << endl;
         cout << " \timage file: " << imageFilename << endl;
         if(!groundTruthFilename.empty()) cout << " \tground truth segmentation: " << groundTruthFilename << endl;
     }
 
-    Mat m= imread(imageFilename, IMREAD_COLOR);
-    
+    Mat m, m_ref;
+    // on charge l'image
+    m = imread(imageFilename, IMREAD_COLOR);
+    // on vérifie que l'image est valide
+    if(m.empty())
+    {
+        cout << "Could not open or find the image" << std::endl;
+        return EXIT_FAILURE;
+    }
+    // on charge l'image de référence
+    if (argc == 3) {
+        m_ref = imread(groundTruthFilename, IMREAD_GRAYSCALE);
+        if(m_ref.empty())
+        {
+            cout << "Could not open or find the image" << std::endl;
+            return EXIT_FAILURE;
+        }
+    }
     // convertir en espace couleur L*a*b
-     cvtColor(m, m, COLOR_BGR2Lab);
-    cout << m.at<Vec3b>(0,0) << endl;
-
+    cvtColor(m, m, COLOR_BGR2Lab);
 
     //on définit les paramètres pour meanshift
+        // termcrit : critère d'arrêt
     TermCriteria termcrit(TermCriteria::MAX_ITER | TermCriteria::EPS, 5, 1);
-    int spatialRad = 10;
-    int colorRad = 20;
-    int maxPyrLevel = 20;
-    Mat result=m;
-    //on applique meanshift
+        // spatialRad : rayon spatial
+    int spatialRad = 20;
+        // colorRad : rayon de couleur
+    int colorRad = 10;
+        // maxPyrLevel : nombre de niveaux de l'image
+    int maxPyrLevel = 1;
+        // result : image segmentée
+    Mat result;
+    //on applique meanshift avec la fonction pyrMeanShiftFiltering
     //pyrMeanShiftFiltering(m, result, spatialRad, colorRad, maxPyrLevel, termcrit);
-    meanshift(m,spatialRad, colorRad, maxPyrLevel,  0.0001);
-    // affichage de k 
-    cvtColor(m, m, COLOR_Lab2BGR);
-    imwrite("meanshift.jpg", m);
+    meanshift(m, result, termcrit, spatialRad, colorRad);
+    // on convertit l'image segmentée en espace couleur BGR
+    cvtColor(result, result, COLOR_Lab2BGR);
+    // on affiche l'image segmentée
     namedWindow(imageFilename, cv::WINDOW_AUTOSIZE);
-    namedWindow("kmeans image", cv::WINDOW_AUTOSIZE);
     imshow(imageFilename, imread(imageFilename));
-    imshow("Segmented Image", m);
-   cv::waitKey(0);
+    imshow("Segmented Image", result);
+
+    // Evaluation de la qualité de la segmentation
+    // on convertit l'image segmentée en espace couleur gris
+    cvtColor(result, result, COLOR_BGR2GRAY);
+    // on applique un seuillage binaire inverse à l'image segmentée pour obtenir une image binaire (0 ou 255)
+    threshold(result, result, 255/2, 255, THRESH_BINARY_INV);
+
+    imshow("Segmented Binary Image", result);
+
+    long TP = 0, FP = 0, FN = 0;
+    if (!m_ref.empty()) {
+
+        for (int i = 0; i < m.rows; i++)
+        {
+            for (int j = 0; j < m.cols; j++)
+            {
+                // on vérifie si le pixel est dans la zone de vrai positif
+                if (m_ref.at<uchar>(i,j) == 255 && result.at<uchar>(i,j) == 255)
+                    TP++;
+                // on vérifie si le pixel est dans la zone de faux positif
+                else if (m_ref.at<uchar>(i,j) == 0 && result.at<uchar>(i,j) == 255)
+                    FP++;
+                // on vérifie si le pixel est dans la zone de faux négatif
+                else if (m_ref.at<uchar>(i,j) == 255 && result.at<uchar>(i,j) == 0)
+                    FN++;
+            }
+        }
+        // on calcule les métriques
+        double Precision   = (double) TP/(TP+FP);
+        double Sensibilite = (double) TP/(TP+FN);
+        double DICE_coef   = (double) (2*TP)/(2*TP+FP+FN);
+         // on affiche les métriques
+        cout << "TP: " << TP << endl;
+        cout << "FP: " << FP << endl;
+        cout << "FN: " << FN << endl;
+        cout << "Précision: " << Precision << endl;
+        cout << "Sensibilité: " << Sensibilite << endl;
+        cout << "DICE Coefficient: " << DICE_coef << endl;
+
+        namedWindow(groundTruthFilename, cv::WINDOW_AUTOSIZE);
+        imshow(groundTruthFilename, m_ref);
+    }
+   
+    cv::waitKey(0);
 
     return 0;
     }
-

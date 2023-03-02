@@ -55,6 +55,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "src/tp/CMakeFiles/kmeans.dir/DependInfo.cmake"
   "src/tp/CMakeFiles/meanshift.dir/DependInfo.cmake"
   "src/tutorials/CMakeFiles/display_image.dir/DependInfo.cmake"
   "src/tutorials/CMakeFiles/load_modify_image.dir/DependInfo.cmake"

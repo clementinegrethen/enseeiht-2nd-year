@@ -9,7 +9,7 @@
  * @param message A message to print before the matrix info: the output is in the format "message: [RxC] ch: #channels type: CV_XXTCY"
  * @param m The matrix.
  */
-//void printMatInfo(const std::string& message, const cv::Mat& m);
+void printMatInfo(const std::string& message, const cv::Mat& m);
 
 /**
  * @brief Print the information about a matrix with the name given by variable name.

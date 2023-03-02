@@ -28,6 +28,7 @@ void kmoyenne(Mat& data, int k, Mat& centers, vector<int>& labels) {
     }
     cout << "centers = " << centers << endl;
     // initialisation du vecteur des labels: on pré-alloue la mémoire nécessaire stocker les labels de chaque pixel
+    // labels va contenir l'étiquette du cluster auquel appartient chaque pixel
     for (int i = 0; i < data.total(); i++) {
         labels.push_back(0);
     }
@@ -68,6 +69,7 @@ void kmoyenne(Mat& data, int k, Mat& centers, vector<int>& labels) {
             }
             float newCenter = sum / count;
             // on vérifie si l'algorithme a convergé ou non c'est à dire si la différence entre le nouveau centre et l'ancien est inférieure à EPSILON
+            // il faut que la différence soit inférieure à EPSILON pour tous les centres
             if (abs(newCenter - centers.at<float>(j,2)) < EPSILON) {
                 convergence = true;
             } else {
@@ -131,38 +133,41 @@ int main(int argc, char** argv) {
     gt = imread(groundTruthFilename, IMREAD_GRAYSCALE);
 
     Mat src = m.clone();
+    // on convertit l'image en niveaux de gris
     m.convertTo(m, CV_32F);
     
     // 2) kmeans asks for a mono-dimensional list of "points". Our "points" are the pixels of the image that can be seen as 3D points
     // where each coordinate is one of the color channel (e.g. R, G, B). But they are organized as a 2D table, we need
     // to re-arrange them into a single vector.
     // see the method Mat.reshape(), it is similar to matlab's reshape
+    // on  a maintenant un vecteur de pixels
     Mat vect = m.reshape(3, m.total());
     PRINT_MAT_INFO(vect);
 
-    // now we can call kmeans(...)
+    // matrice qui contiendra les centres
     Mat centers;
     centers.create(k, 3, CV_32F);
+    // vecteur qui contiendra les étiquettes de cluster
     vector<int> labels;
     //kmeans(vect, k, labels, TermCriteria(TermCriteria::EPS+TermCriteria::COUNT, 10, 1.0), 3, KMEANS_PP_CENTERS, centers);
     kmoyenne(vect, k, centers, labels);
-
+    
     PRINT_MAT_INFO(centers);
-
+    // on remplit la matrice centers avec les couleurs des centres
     for (int i = 0; i < 3; i++) {
         centers.at<float>(0,i) = 255;
         centers.at<float>(1,i) = 0;
     }
-
+    // on associe à chaque pixel le centre le plus proche de lui
     for (int i = 0; i < m.total(); i++) {
         vect.at<float>(i,0) = centers.at<float>(labels.at(i),0);
         vect.at<float>(i,1) = centers.at<float>(labels.at(i),1);
         vect.at<float>(i,2) = centers.at<float>(labels.at(i),2);
     }
-
+    // on remet l'image en 2D
     Mat vect_r = vect.reshape(3, m.rows);
     vect_r.convertTo(vect_r, CV_8U);
-
+    // calcul de la qualité de la segmentation
     long TP = 0, TN = 0, FP = 0, FN = 0;
 
     if(!gt.empty()) {
@@ -192,7 +197,7 @@ int main(int argc, char** argv) {
         cout << "DICE Coefficient: " << DICE_coef << endl;
 
     }
-  
+  // affichage des images
     imwrite("kmeans.jpg", vect_r);
 
     namedWindow(imageFilename, cv::WINDOW_AUTOSIZE);
