@@ -30,7 +30,7 @@ for k = 1:N
 	for i = floor(min([y1,y2])):ceil(max([y1,y2]))
 		for j = floor(min([x1,x2])):ceil(max([x1,x2]))
 			echantillons = [ echantillons I(i,j) ];
-		end
+		end;
 	end
 
 	[moyennes(k),variances(k)] = estimation(echantillons);

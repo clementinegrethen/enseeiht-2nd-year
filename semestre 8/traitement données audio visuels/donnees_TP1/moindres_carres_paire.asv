@@ -1,0 +1,15 @@
+function parametres = moindres_carres_paire(d,x,bord_inf,bord_sup)
+    beta_0 = bord_inf(1);
+    gamma_0= bord_sup(0);
+     A=[]
+     B1 = bord_inf - beta_0.*(1-x).^d;
+     B2 = bord_su - y_sup(1).*(1-x).^d;
+     B = [B1;B2];
+
+     
+     
+
+
+
+
+

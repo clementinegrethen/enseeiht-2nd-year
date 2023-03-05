@@ -26,4 +26,4 @@ Précision :
 * Dans le cas où la texture possède un fond de couleur plus sombre que la forme (comme dans l'image texture3.png), il faut inverser le noir et le blanc:
 - Dans kmeans il faut inverser les valeurs 255 et 0 sur les lignes 153 154
 - Dans meanshift il faut jouer sur le dernier argument de l'appel à threshold : remplacer THRESH_BINARY par THRESH_BINARY_INV
-.
+

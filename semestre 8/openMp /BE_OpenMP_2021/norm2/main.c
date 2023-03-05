@@ -111,12 +111,17 @@ double dnorm2_par_red(double *x, int n){
 double dnorm2_par_nored(double *x, int n){
   int i;
   double res;
-
+double *loads;
   res = 0.0;
+  # pragma omp parallel 
+  # pragma omp single
+  loads = (double*)malloc(sizeof(double)*omp_get_num_threads());
+  loads[omp_get_thread_num()]=0.0;
 
+# pragma omp parallel for
   for(i=0; i<n; i++)
-    res += x[i]*x[i];
-
+    loads[omp_get_thread_num()] += x[i]*x[i];
+  
   return sqrt(res);
   
 }
