@@ -1,0 +1,9 @@
+function u_kp1 = impainting(b,u_k,lambda,Dx,Dy,epsilon,XD)
+   [nb,~]=size(u_k);
+    W_omega=spdiags(XD,0,nb,nb);
+    W_k = 1./sqrt((Dx*u_k).^2+(Dy*u_k).^2 +epsilon);
+    W_k = spdiags(W_k,0,nb,nb);
+    Lap = -Dx'*W_k*Dx -Dy'*W_k*Dy;
+    Ak = (W_omega -lambda*Lap);
+    b=W_omega*b;
+    u_kp1 = Ak\b;
