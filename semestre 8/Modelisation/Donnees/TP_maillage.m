@@ -125,21 +125,49 @@ for k = 1:Nombre_classe
 end
 
 % Affichage de la segmentation binaire
-figure;
 BW=imfill(binaryImg);
-imshow(BW);
- hold on
+s = size(BW);
 % estimation de l'axe médian
-middle_row = length(BW(:,1));
-for i = middle_row(1:end-1)
+middle_row = s(1)/2;
+for i = 1:s(2)-1
     if BW(middle_row,i) ~= BW(middle_row,i+1)
-        a=0
-        pixel_contour = BW(middle_row,i+1);
+        break;
+    end
+end
+hold on;
+pixel_contour = [middle_row,i+1];
+
+figure;
+imshow(BW);
+contour=bwtraceboundary(binaryImg,pixel_contour,'W',8,Inf,'counterclockwise');
+hold on;
+plot(contour(:,2),contour(:,1),'g','LineWidth',2);
+
+
+% Calcul de la matrice de Voronoï
+[vx, vy] = voronoi(contour(:,2), contour(:,1));
+points_nuls_x=[find(vx(1,:)>=nb_lignes) find(vx(2,:)>=nb_colonnes) find(vx(1,:)<=0) find(vx(2,:)<=0)];
+points_nuls_y=[find(vy(1,:)>=nb_lignes) find(vy(2,:)>=nb_colonnes) find(vy(1,:)<=0) find(vy(2,:)<=0)];
+points_a_enlever=[points_nuls_x points_nuls_y];
+vx(:,points_a_enlever)=[];
+vy(:,points_a_enlever)=[];
+
+points_a_retirer=[];
+for i=1:length(vx)
+    vx1=min(max(1,round(vx(1,i))),nb_colonnes);
+    vx2=min(max(1,round(vx(2,i))),nb_colonnes);
+    vy1=min(max(1,round(vy(1,i))),nb_lignes);
+    vy2=min(max(1,round(vy(2,i))),nb_lignes);
+    if BW(vy1,vx1)==0 || BW(vy2,vx2)==0
+        points_a_retirer=[points_a_retirer i];
     end
 end
 
-contour=bwtraceboundary(binaryImg,pixel_contour,'W');
-plot(contour(:,2),contour(:,1),'g','lineWidth',2);
+vx(:,points_a_retirer)=[];
+vy(:,points_a_retirer)=[];
+
+hold on;
+plot(vx,vy);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % A FAIRE SI VOUS UTILISEZ LES MASQUES BINAIRES FOURNIS   %
 % Chargement des masques binaires                         %
