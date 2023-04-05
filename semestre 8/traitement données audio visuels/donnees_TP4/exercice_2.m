@@ -13,7 +13,7 @@ nb_points_affichage_disque = 30;
 increment_angulaire = 2*pi/nb_points_affichage_disque;
 theta = 0:increment_angulaire:2*pi;
 rose = [253 108 158]/255;
-q_max = 50000;
+q_max = 200;
 nb_affichages = 1000;
 pas_entre_affichages = floor(q_max/nb_affichages);
 temps_pause = 0.0001;
@@ -75,28 +75,25 @@ xlabel('Nombre d''iterations','FontSize',20);
 ylabel('Niveau de gris moyen','FontSize',20);
 
 % Recherche de la configuration optimale :
-for q = 1:q_max
-	i = rem(q,N)+1;					% On parcourt les N disques en boucle
+while q<q_max
+    Nb_nv_cercle=poissrnd(lambda);
+    c=[c; nb_colonnes*rand(Nb_nv_cercle,2)];
+	i = rem(q,N)+1;
+    % On parcourt les N disques en boucle
 	I_moyen_cour = I_moyen(i);
 
 	% Tirage aleatoire d'un nouveau disque et calcul du niveau de gris moyen :
-	  c_alea = [nb_colonnes*rand nb_lignes*rand];
-      new_center_array = repmat(c_alea, size([c(1:i - 1, :); c(i + 1:length(c), :)], 1), 1);
-      distance = sqrt(sum((new_center_array - [c(1:i - 1, :); c(i + 1:length(c), :)]).^2, 2));
-      b = sum(distance <= sqrt(2) * R);
-    while (b)
-        
-        c_alea = [nb_colonnes * rand nb_lignes * rand];
-        new_center_array = repmat(c_alea, size([c(1:i - 1, :); c(i + 1:length(c), :)], 1), 1);
-        distance = sqrt(sum((c_alea - [c(1:i - 1, :); c(i + 1:length(c), :)]).^2, 2));
-        b = sum(distance <= sqrt(2) * R)
-    end
-	I_moyen_nouv = calcul_I_moyen(I,c_alea,R);
-
-	% Si le disque propose est "meilleur", mises a jour :
-	if I_moyen_nouv>I_moyen_cour
-		c(i,:) = c_alea;
-		I_moyen(i) = I_moyen_nouv;
+	  c_alea = nb_colonnes*rand(1,2);
+      I_moyen_nouv = I_moyen(I,c_alea,R);
+      if I_moyen_nouv>I_moyen_cour
+		j=1;
+        while(j<=N && sqrt((c_alea(1)-c(j,1)).^2+(c_alea(2)-c(j,2)).^2)>sqrt(2)*R)
+            j=j+1;
+        end 
+		if j==N+1
+            c(i,:) = c_alea;
+            I_moyen_disques(i) = I_moyen_nouv;
+        end
 
 		hold off;
 		subplot(1,2,1);
