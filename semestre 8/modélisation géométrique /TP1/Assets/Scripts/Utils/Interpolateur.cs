@@ -145,21 +145,25 @@ public class Interpolateur : MonoBehaviour
     //////////////////////////////////////////////////////////////////////////
     (List<float>, List<float>) buildParametrisationTchebycheff(int nbElem, float pas)
     {
-        // Vecteur des pas temporels
+       // Vecteur des pas temporels
         List<float> T = new List<float>();
         // Echantillonage des pas temporels
         List<float> tToEval = new List<float>();
+
+        // Construction des pas temporels
         for (int i = 0; i < nbElem; i++)
         {
-            T.Add(Mathf.Cos((2 * i + 1) * Mathf.PI / (2 * nbElem)));
+            T.Add((float)Math.Cos((2*i*Math.PI) / (2*nbElem+2)));
         }
+
         // Construction des échantillons
-        tToEval.Add(T[0]);
-        int compteur = 1;
-        while (tToEval.Last() <= T.Max())
+        float Tmin = T.Min();
+        float Tmax = T.Max();
+        int compt = 0;
+        while (Tmin+compt*pas <= Tmax)
         {
-            tToEval.Add(T[0] + compteur * pas);
-            compteur++;
+            tToEval.Add(Tmin + compt * pas);
+            compt++;
         }
         return (T, tToEval);
     }
@@ -202,11 +206,10 @@ public class Interpolateur : MonoBehaviour
     {
         for (int i = 0; i < tToEval.Count; ++i)
         {
-            // Appliquer neville a l'echantillon i
-            // TODO !!
-            Vector2 v = new Vector2(0.0f,0.0f);
+            Vector2 v = neville(X, Y, T, tToEval[i]);
             Vector3 pos = new Vector3(v[0], 0.0f, v[1]);
             P2DRAW.Add(pos);
+            
         }
     }
 
@@ -254,8 +257,23 @@ public class Interpolateur : MonoBehaviour
     //////////////////////////////////////////////////////////////////////////
     private Vector2 neville(List<float> X, List<float> Y, List<float> T, float t)
     {
-        // TODO !!
-        return new Vector2(0.0f,0.0f);
+        // Interpolation de Neville
+        List<float> Xi = new List<float>();
+        List<float> Yi = new List<float>();
+        for (int i = 0; i < X.Count; ++i)
+        {
+            Xi.Add(X[i]);
+            Yi.Add(Y[i]);
+        }
+        for (int i = 1; i < X.Count; ++i)
+        {
+            for (int j = 0; j < X.Count - i; ++j)
+            {
+                Xi[j] = ((t - T[j + i]) * Xi[j] + (T[j] - t) * Xi[j + 1]) / (T[j] - T[j + i]);
+                Yi[j] = ((t - T[j + i]) * Yi[j] + (T[j] - t) * Yi[j + 1]) / (T[j] - T[j + i]);
+            }
+        }
+        return new Vector2(Xi[0], Yi[0]);
     }
 
     //////////////////////////////////////////////////////////////////////////
