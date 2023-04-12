@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -265,6 +265,7 @@ public class Interpolateur : MonoBehaviour
             Xi.Add(X[i]);
             Yi.Add(Y[i]);
         }
+        // On parcourt les différentes paires de points nécessaires pour effectuer l'interpolation.
         for (int i = 1; i < X.Count; ++i)
         {
             for (int j = 0; j < X.Count - i; ++j)
@@ -273,6 +274,7 @@ public class Interpolateur : MonoBehaviour
                 Yi[j] = ((t - T[j + i]) * Yi[j] + (T[j] - t) * Yi[j + 1]) / (T[j] - T[j + i]);
             }
         }
+        // on renvoie le point atteint en t
         return new Vector2(Xi[0], Yi[0]);
     }
 
