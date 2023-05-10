@@ -30,14 +30,16 @@ public class Bernstein : MonoBehaviour
     // sortie : aucune                                                      //
     //////////////////////////////////////////////////////////////////////////
     void buildPolysBernstein() {
+        List<float> echantillonage = buildEchantillonnage();
         for (int k = 0; k <= nombrePolynomesBernstein; k++)
         {
             long kparmin = KparmiN(k, nombrePolynomesBernstein);
             List<Vector2> listepoly = new List<Vector2>();
-            for (float t = 0.0f; t <= 1; t = t + pas)
+            for (int t=0; t<echantillonage.Count; t++)
             {
-                float valeur = kparmin * (float) Math.Pow((1 - t), nombrePolynomesBernstein - k) * (float) Math.Pow(t, k);
-                listepoly.Add(new Vector2(t, valeur));
+                float temps_cours=echantillonage[t];
+                float valeur = kparmin * (float) Math.Pow((1 - temps_cours), nombrePolynomesBernstein - k) * (float) Math.Pow(temps_cours, k);
+                listepoly.Add(new Vector2(temps_cours, valeur));
             }
             ListePoints.Add(listepoly);
         } 

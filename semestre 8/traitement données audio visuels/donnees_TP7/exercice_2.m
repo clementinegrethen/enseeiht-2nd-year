@@ -30,16 +30,29 @@ j_p_min = min(j_p(:));
 j_p_max = max(j_p(:));
 
 % Lecture et affichage de l'image cible c :
-roselab=rgb2lab(s);
-c=roselab
-c(:,:,2)=
-c=roselab(:,:,1)
+s=rgb2lab(s);
+
+c= imread('Images/rose.jpg');
+c = c(:,:,:);
+
+
+%c=roselab(:,:,1)
 [nb_lignes_c,nb_colonnes_c,nb_canaux] = size(c);
 subplot(1,2,2);
 imagesc(c);
+% c=rgb2lab(c);
+% 
+% c(:,:,2)=0;
+% c(:,:,3)=0;
+
 axis image off;
 title('Image cible','FontSize',20);
 hold on;
+c=rgb2lab(c);
+ 
+ c(:,:,2)=0;
+ c(:,:,3)=0;
+
 
 % Selection et affichage d'un rectangle r dans c :
 disp('Cliquez les deux extremites de la zone cible');
@@ -72,6 +85,8 @@ u = c;
 interieur = find(p>0);
 u(i_r_min:i_r_max,j_r_min:j_r_max,:) = collage(r,s,interieur);
 hold off;
+u=lab2rgb(u);
+
 imagesc(u);
 axis image off;
 title('Resultat du photomontage','FontSize',20);

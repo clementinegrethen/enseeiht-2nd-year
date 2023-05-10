@@ -30,7 +30,7 @@ public class DeCasteljauEvaluation : MonoBehaviour
         for (float t = 0.0f; t <= 1; t = t + pas)
         {
             tToEval.Add(t);
-        }
+        } 
         return tToEval;
     }
 
@@ -47,26 +47,24 @@ public class DeCasteljauEvaluation : MonoBehaviour
     //////////////////////////////////////////////////////////////////////////
     Vector2 DeCasteljau(List<float> X, List<float> Y, float t)
     {
-         // Interpolation de Neville
-        List<float> Xi = new List<float>();
-        List<float> Yi = new List<float>();
-        for (int i = 0; i < X.Count; ++i)
+        // nombre de points de controle
+        int n = X.Count;
+        // on calcule les barycentres consécutifs des points de contrôles
+        // pour chaque instant t
+        // stockons les barycentres dans les listes X_barycentre et Y_barycentre
+         List<float> X_barycentre = new List<float>(X);
+        List<float> Y_barycentre = new List<float>(Y);
+        for (int i = 0; i < n; i++)
         {
-            Xi.Add(X[i]);
-            Yi.Add(Y[i]);
-        }
-        // On parcourt les différentes paires de points nécessaires pour effectuer l'interpolation.
-        for (int i = 1; i < X.Count; ++i)
-        {
-            for (int j = 0; j < X.Count - i; ++j)
+            for (int j = 0; j < n - i - 1; j++)
             {
-                Xi[j] = (((1-t) * Xi[j] + (t) * Xi[j + 1]) ;
-                Yi[j] = ((1-t)* Yi[j] + (t) * Yi[j + 1]);
+                X_barycentre[j]= X_barycentre[j]*(1-t)+t*X_barycentre[j+1];
+                Y_barycentre[j]=Y_barycentre[j]*(1-t)+t*Y_barycentre[j+1];
             }
         }
-        // on renvoie le point atteint en t
-        return new Vector2(Xi[0], Yi[0]);
+        return new  Vector2(X_barycentre[0],Y_barycentre[0]);
     }
+
 
     //////////////////////////////////////////////////////////////////////////
     //////////////////////////// NE PAS TOUCHER //////////////////////////////

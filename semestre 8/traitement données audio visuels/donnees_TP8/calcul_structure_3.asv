@@ -1,3 +1,0 @@
-function u_barre_2 = calcul_structure_3(u_barre,u,Dx,Dy,Phi,epsilon,mu_prime,gamma)
-
-

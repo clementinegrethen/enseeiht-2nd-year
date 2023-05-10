@@ -354,13 +354,16 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.SpatialTracking.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
+"Assets/script.cs"
 "Assets/Scripts/Bernstein.cs"
 "Assets/Scripts/CalculHodographe.cs"
 "Assets/Scripts/DeCasteljauEvaluation.cs"
 "Assets/Scripts/DeCasteljauSubdivision.cs"
+"Assets/Scripts/InterpolateurDeSurface.cs"
 "Assets/Scripts/Points.cs"
 "Assets/Scripts/SurfaceBezierTriangulaire.cs"
 "Assets/Scripts/Zoom.cs"
+"Assets/SurfaceBezierPT.cs"
 -langversion:9.0
 
 /deterministic
