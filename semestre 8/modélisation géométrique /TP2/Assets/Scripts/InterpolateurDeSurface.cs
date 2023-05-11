@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -28,24 +28,26 @@ public class InterpolateurDeSurface : MonoBehaviour
 
     void buildSurfaceBezierPT()
     {
+        // ON fait un produit tensoriel en commençant par les lignes pour les colonnes CF CTD4!
+        
         // on Parcourt les points en "lignes"
         for (float i=0; i<=1; i += pas)
         {
             List<Vector3> bezier_i = new List<Vector3>();
             for (float j =0; j <=1; j += pas)
             {
-                // pour chaque point s(u,v) on calcul avce la formule du cours 
+                // pour chaque point s(u,v) on calcul avce la formule du cours CTD4
                 bezier_i.Add(surface(i, j));
             }
             ListePoints.Add(bezier_i);
         }
-        //colonnes
+
         for (float i = 0; i <= 1; i += pas)
         {
             List<Vector3> bezier_i = new List<Vector3>();
             for (float j = 0; j <= 1; j += pas)
             {
-                 // pour chaque point s(u,v) on calcul avce la formule du cours 
+                 // pour chaque point s(u,v) on calcul avce la formule du cours  CTD4
 
                 bezier_i.Add(surface(j, i));
             }
@@ -58,15 +60,17 @@ public class InterpolateurDeSurface : MonoBehaviour
         return (float)(KparmiN(k, n) * Math.Pow(t, k) * Math.Pow(1 - t, n - k));
     }
 
+
     Vector3 surface(float u, float v)
     {
-        Vector3 S = new Vector3();
+    
         int m = X.GetLength(0) - 1;
         int n = X.GetLength(1) - 1;
+        Vector3 S = new Vector3();
         for (int i = 0; i <= m; i++)
         {
             for(int j = 0; j <= n; j++)
-            {
+            { 
                 float lbda = buildBernstein(m, i, u) * buildBernstein(n, j, v);
                 S.x += lbda * X[i, j];
                 S.y += lbda * Hauteurs[i, j];
