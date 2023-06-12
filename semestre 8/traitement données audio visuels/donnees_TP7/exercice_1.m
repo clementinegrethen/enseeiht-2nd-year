@@ -6,7 +6,7 @@ H = taille_ecran(4);
 
 % Lecture et affichage de l'image source s :
 figure('Name','Photomontage naif','Position',[0.1*L,0.1*H,0.9*L,0.7*H]);
-s = imread('Images/lisa.jpeg');
+s = imread('Images/clem.JPG');
 [nb_lignes_s,nb_colonnes_s,nb_canaux] = size(s);
 subplot(1,2,1);
 imagesc(s);
@@ -67,6 +67,7 @@ p = imresize(p,[nb_lignes_r,nb_colonnes_r]);
 % Calcul et affichage de l'image resultat u :
 u = c;
 interieur = find(p>0);
+
 u(i_r_min:i_r_max,j_r_min:j_r_max,:) = collage(r,s,interieur);
 hold off;
 imagesc(u);

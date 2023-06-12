@@ -15,7 +15,7 @@ H = taille_ecran(4);
 figure('Name','Decomposition structure + texture par le modele TV-Hilbert','Position',[0,0,L,0.5*H]);
 
 % Lecture et affichage de l'image u :
-u = imread('Images/pilier.png');
+u = imread('Images/barbara.png');
 u = double(u);
 [nb_lignes,nb_colonnes,nb_canaux] = size(u);
 subplot(1,3,1);

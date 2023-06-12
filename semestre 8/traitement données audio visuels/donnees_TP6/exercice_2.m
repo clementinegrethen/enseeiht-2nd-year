@@ -1,4 +1,4 @@
-clear;
+ clear;
 close all;
 taille_ecran = get(0,'ScreenSize');
 L = taille_ecran(3);
@@ -7,12 +7,13 @@ H = taille_ecran(4);
 load force_externe;
 
 % Parametres du modele :
-alpha = 0.001;				% Poids de la penalisation de la longueur
-beta = 0.0001;				% Poids de la penalisation de la courbure
+alpha = 0.001;				% Poids de la pénalisation de la longueur
+beta = 0.09;				% Poids de la pénalisation de la courbure
+				% Poids de la penalisation de la courbure
 
 % Parametre de la descente de gradient :
 gamma = 0.5;				% Pas de la descente de gradient
-nb_iterations_max = 500000;		% Nombre d'iterations maximal
+nb_iterations_max = 1000000;		% Nombre d'iterations maximal
 seuil_convergence = 1e-8;		% Critere d'arrêt sur l'ecart quadratique relatif entre deux affichages
 
 % Parametre du filtrage gaussien :

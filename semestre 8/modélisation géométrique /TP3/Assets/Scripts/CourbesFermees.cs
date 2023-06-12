@@ -26,10 +26,83 @@ public class CourbesFermees : MonoBehaviour
     // sortie :                                                             //
     //          - (List<float>, List<float>) : points de la courbe          //
     //////////////////////////////////////////////////////////////////////////
-    (List<float>, List<float>) subdivise(List<float> X, List<float> Y) {
-        List<float> Xres = new List<float>();
-        List<float> Yres = new List<float>();
+    // (List<float>, List<float>) subdivise(List<float> X, List<float> Y) {
+    //     List<float> Xres = new List<float>();
+    //     List<float> Yres = new List<float>();
+
+    //     // Duplication des points de contrôle pour obtenir un polygone fermé
+    //     // CF poly moodle tp3 subdisvion 
+    //     foreach (float x in X)
+    //     {
+    //         Xres.Add(x);
+    //         Xres.Add(x);
+    //     }
+    //     foreach (float y in Y)
+    //     {
+    //         Yres.Add(y);
+    //         Yres.Add(y);
+    //     }
+
+    //     for (int i = 0; i < nombreIteration; i++)
+    //     {
+    //         for (int j = 0; j < Xres.Count - 1; j++)
+    //         {
+    //             // Calcul du point milieu entre deux points de contrôle consécutifs dans le polygone de contrôle
+    //             Xres[j] = (Xres[j] + Xres[j + 1]) / 2;
+    //             Yres[j] = (Yres[j] + Yres[j + 1]) / 2;
+    //         }
+
+    //         // Calcul du point milieu entre le premier et le dernier point de contrôle
+    //         Xres.Add((Xres[0] + Xres[Xres.Count - 1]) / 2);
+    //         Yres.Add((Yres[0] + Yres[Yres.Count - 1]) / 2);
+    //     }
+
+    //     return (Xres, Yres);
+
         
+    // }
+    // Spline
+    (List<float>, List<float>) subdivise(List<float> X, List<float> Y)
+    {
+        List<float> Xres = new List<float>(X);
+        List<float> Yres = new List<float>(Y);
+
+        for (int k = 0; k < nombreIteration; k++)
+        {
+            List<float> Xk = new List<float>();
+            List<float> Yk = new List<float>();
+           
+
+            // Initialisation des points de controle
+            for (int i = 0; i < Xres.Count; i++)
+            {
+                // Ajouté deux fois pour pouvoir faire la moyenne
+                Xk.Add(Xres[i]);
+                Xk.Add(Xres[i]);
+                Yk.Add(Yres[i]);
+                Yk.Add(Yres[i]);
+                
+            }
+            
+            for (int i = 0; i < degres; i++)
+            {
+                for (int j = 0; j < Xk.Count -1; j++)
+                {
+                    Xk[j] = (Xk[j+1] + Xk[j]) * 0.5f;
+                    Yk[j] = (Yk[j+1] + Yk[j]) * 0.5f;
+                   
+                }
+
+                // Ajout du dernier point
+                Xk.Add((Xk[Xk.Count - 1] + Xk[0]) * 0.5f);
+                Yk.Add((Yk[Yk.Count - 1] + Yk[0]) * 0.5f);
+                
+            }
+
+            Xres = Xk;
+            Yres = Yk;
+            
+        }
         return (Xres, Yres);
     }
 

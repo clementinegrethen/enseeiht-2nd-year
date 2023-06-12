@@ -1,0 +1,42 @@
+clear;
+close all;
+
+% Paramètres de la TFCT
+fenetre = 'hann';
+n_fenetre = 1024;  % taille de la fenêtre
+n_decalage = 512;  % décalage entre les fenêtres
+
+% Lecture du fichier audio
+[y, f_ech] = audioread('Musiques/Lizzo-Boys.mp3');
+% Lecture des fichiers séparés :
+[y_h, f_ech] = audioread('Musiques/violon.wav');
+[y_p, f_ech] = audioread('Musiques/batterie.wav');
+
+% Création du mélange :
+taille = min(length(y_h), length(y_p));
+y_h = y_h(1:taille);
+y_p = y_p(1:taille);
+y = y_h + y_p;
+% Calcul de la TFCT
+[Y,~,~] = TFCT(y,f_ech,n_fenetre,n_decalage,fenetre);
+S = abs(Y);
+
+% Calcul de la TF2D
+TF2D = fft2(S);
+
+% Recherche des pics dans la TF2D
+[~,locs] = findpeaks(abs(TF2D(:)));
+
+% Association des pics à différentes sources
+R = 2; % nombre de sources
+source_assignment = kmeans(locs, R);
+
+% Reconstruction et sauvegarde de chaque source
+for r = 1:R
+    TF2D_r = zeros(size(TF2D));
+    TF2D_r(locs(source_assignment==r)) = TF2D(locs(source_assignment==r));  % copier seulement les pics associés à cette source
+    S_r = abs(ifft2(TF2D_r));  % récupérer le sonagramme de la source
+    Y_r = S_r .* exp(1i*angle(Y));  % reprendre la phase du sonagramme original
+    [y_r,~] = ITFCT(Y_r,f_ech,n_decalage,fenetre);
+    audiowrite(['Resultats/source_' num2str(r) '.wav'],y_r,f_ech);
+end

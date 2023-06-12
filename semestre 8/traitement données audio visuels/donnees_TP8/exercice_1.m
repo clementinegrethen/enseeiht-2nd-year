@@ -7,7 +7,7 @@ u = double(im2gray(u));
 %u = double(rgb2gray(u));
 [nb_lignes,nb_colonnes] = size(u);
 
-eta=0.05
+eta=0.001
 
 % Calcul du spectre s :
 s = fft2(u);

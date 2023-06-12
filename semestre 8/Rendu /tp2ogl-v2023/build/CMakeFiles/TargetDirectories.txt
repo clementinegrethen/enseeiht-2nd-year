@@ -1,3 +1,0 @@
-/Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/Rendu /tp2ogl-v2023/build/CMakeFiles/robot.dir
-/Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/Rendu /tp2ogl-v2023/build/CMakeFiles/edit_cache.dir
-/Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/Rendu /tp2ogl-v2023/build/CMakeFiles/rebuild_cache.dir

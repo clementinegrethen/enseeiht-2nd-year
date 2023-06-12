@@ -355,6 +355,7 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
 "Assets/Scripts/CourbesFermees.cs"
+"Assets/Scripts/CourbesOuvertes.cs"
 "Assets/Scripts/Points.cs"
 "Assets/Scripts/Zoom.cs"
 -langversion:9.0

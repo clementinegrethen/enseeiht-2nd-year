@@ -1,0 +1,387 @@
+Unity Editor version:    2021.3.21f1 (1b156197d683)
+Branch:                  2021.3/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 13.3.1 (a) (Build 22E772610a)
+Darwin version:          22.4.0
+Architecture:            arm64
+Running under Rosetta:   NO
+Available memory:        8192 MB
+Using pre-set license
+Pro License: YES
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/2021.3.21f1/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+/Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/modélisation géométrique /projet_camera
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+63365
+Successfully changed project path to: /Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/modélisation géométrique /projet_camera
+/Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/modélisation géométrique /projet_camera
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [8473992000] Host "[IP] 172.22.225.216 [Port] 0 [Flags] 2 [Guid] 4122636000 [EditorId] 4122636000 [Version] 1048832 [Id] OSXEditor(0,MacBook-Air-de-Clementine.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [8473992000] Host "[IP] 172.22.225.216 [Port] 0 [Flags] 2 [Guid] 4122636000 [EditorId] 4122636000 [Version] 1048832 [Id] OSXEditor(0,MacBook-Air-de-Clementine.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 17.61 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.21f1 (1b156197d683)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2021.3.21f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/clementinegrethen/Documents/Enseeiht/enseeiht 2nd year/semestre 8/modélisation géométrique /projet_camera/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+ preferred device: Apple M1 (high power)
+Metal devices available: 1
+0: Apple M1 (high power)
+Using device Apple M1 (high power)
+Initializing Metal device caps: Apple M1
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/2021.3.21f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/2021.3.21f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/2021.3.21f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56773
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/2021.3.21f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/2021.3.21f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Registered in 0.001512 seconds.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 16.86 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.364 seconds
+Domain Reload Profiling:
+	ReloadAssembly (365ms)
+		BeginReloadAssembly (76ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (0ms)
+		EndReloadAssembly (234ms)
+			LoadAssemblies (77ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (67ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (18ms)
+			SetupLoadedEditorAssemblies (124ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (17ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (79ms)
+				ProcessInitializeOnLoadMethodAttributes (24ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.002408 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.13 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.472 seconds
+Domain Reload Profiling:
+	ReloadAssembly (473ms)
+		BeginReloadAssembly (64ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (15ms)
+		EndReloadAssembly (349ms)
+			LoadAssemblies (41ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (114ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (26ms)
+			SetupLoadedEditorAssemblies (155ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (2ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (22ms)
+				ProcessInitializeOnLoadAttributes (119ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (2ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launching external process: /Applications/Unity/Hub/Editor/2021.3.21f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.11 seconds
+Refreshing native plugins compatible for Editor in 0.16 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1341 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 16 unused Assets / (Unknown). Loaded Objects now: 1812.
+Memory consumption went from 58.0 MB to 58.1 MB.
+Total: 2.395958 ms (FindLiveObjects: 0.065250 ms CreateObjectMapping: 0.018917 ms MarkObjects: 2.024791 ms  DeleteObjects: 0.286166 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 200264.575014 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack
+  artifactKey: Guid(e2f815bef9cb44f5d928dc60976a1ea5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack using Guid(e2f815bef9cb44f5d928dc60976a1ea5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd90e075b7a2e9c5db664e7771b8d2979') in 0.020585 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.581079 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source
+  artifactKey: Guid(de85e9fab5e004281bcb59c888be8c37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source using Guid(de85e9fab5e004281bcb59c888be8c37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '835cf2ab3e5820064d4239b41c1f046e') in 0.001357 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.060440 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx
+  artifactKey: Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx using Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0192550d617dc92626f20622615306cc') in 0.741592 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 105.529695 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx
+  artifactKey: Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx using Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2877ce80b9992184563ec14e37e37711') in 0.272072 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.493424 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx
+  artifactKey: Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx using Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8d39a6417b74042a40839fbd9aaf79d') in 0.261151 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.163662 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx
+  artifactKey: Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx using Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a831804f6e30fe8cc4aa0947b60cb75b') in 0.198792 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.554440 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx
+  artifactKey: Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx using Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd22b94b4e6d83a9bd6bf9e60e8553757') in 0.214549 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.083606 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/textures/Palette.jpeg
+  artifactKey: Guid(208f281f2e3544fb7a466c79c9aa4953) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/textures/Palette.jpeg using Guid(208f281f2e3544fb7a466c79c9aa4953) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42fe90a115510b3faa708323d5fe6311') in 0.085985 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 107.283802 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx
+  artifactKey: Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx using Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9216eef17d5562431f00de8e1900cf84') in 0.296633 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.266582 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx
+  artifactKey: Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx using Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9629ddd4af48ef50c5ba89149dec9da7') in 0.208938 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.494316 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx
+  artifactKey: Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx using Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47fc68f444e55d59c7282c6d9de7acfc') in 0.213288 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.465794 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx
+  artifactKey: Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx using Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13cf6579f4f29479422c5edf018e0ccb') in 0.204471 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.808268 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx
+  artifactKey: Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx using Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '764cf998af4c96001b55f93566e6b3eb') in 0.222581 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.093379 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx
+  artifactKey: Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx using Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1724abc42234e6088c756c5e6d3a9ea8') in 0.244276 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 29.114938 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials
+  artifactKey: Guid(85d95eff5733a45e5b1be6b6236030a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials using Guid(85d95eff5733a45e5b1be6b6236030a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31fdfc2698f983aa5a5df976cb9786ce') in 0.002959 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.046738 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/Palette.mat
+  artifactKey: Guid(73b84525de9f24505a366b235f51c3a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/Palette.mat using Guid(73b84525de9f24505a366b235f51c3a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd9e95b7a23bf772e2187428314e04b6') in 0.284645 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/Small City_Free_Pack-World ap.19.mat
+  artifactKey: Guid(76c85d4ad8987435c99192d5ab583f2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/Small City_Free_Pack-World ap.19.mat using Guid(76c85d4ad8987435c99192d5ab583f2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63c1d1121d3f41a5efe3e8d1558c022b') in 0.005880 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/Small City_Free_Pack-World ap.17.mat
+  artifactKey: Guid(1c1b3ee653af3409983b74f7b95f70a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/Small City_Free_Pack-World ap.17.mat using Guid(1c1b3ee653af3409983b74f7b95f70a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '961a7e9aa2af849ca7f77001f41fbe77') in 0.013799 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/Small City_Free_Pack-World ap.11.mat
+  artifactKey: Guid(a917e9c2385744a389a0bcc6209645a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/Small City_Free_Pack-World ap.11.mat using Guid(a917e9c2385744a389a0bcc6209645a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efc8247aa293178bba016f88a92dfb8a') in 0.007022 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000104 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/Small City_Free_Pack-World ap.9.mat
+  artifactKey: Guid(c64c02e316c68496490ccae260220205) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/Small City_Free_Pack-World ap.9.mat using Guid(c64c02e316c68496490ccae260220205) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86f2399eec04769a1818c776e794b3fe') in 0.009759 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/Small City_Free_Pack-World ap.15.mat
+  artifactKey: Guid(ca4aa0b958e6c4c18a3f5340afe3796a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/Small City_Free_Pack-World ap.15.mat using Guid(ca4aa0b958e6c4c18a3f5340afe3796a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cc121a6d1257c60b096d0cedffdab20') in 0.007689 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/World ap.9.mat
+  artifactKey: Guid(656a2a6b541f14fc7aff3f1c0341db6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/World ap.9.mat using Guid(656a2a6b541f14fc7aff3f1c0341db6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a57dafdb03d54ebf0faa82eeda1f7b0') in 0.007562 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000069 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/Small City_Free_Pack-World ap.16.mat
+  artifactKey: Guid(4224557ce85f04982b9fff77d2f86604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/Small City_Free_Pack-World ap.16.mat using Guid(4224557ce85f04982b9fff77d2f86604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d08c39ab0abfe4a145fe789f31da9cc') in 0.007943 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/Small City_Free_Pack-World ap.mat
+  artifactKey: Guid(ff81654e7bff740fcb7f75dae2909c3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/Small City_Free_Pack-World ap.mat using Guid(ff81654e7bff740fcb7f75dae2909c3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b401a3309bb26609a43371d4b0cb95f0') in 0.009302 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000321 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/World ap.8.mat
+  artifactKey: Guid(db45f0a1e48594a0bb827b9842963a9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/World ap.8.mat using Guid(db45f0a1e48594a0bb827b9842963a9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a19278fcaf96cbe9f317869449381f5') in 0.008589 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.114474 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/textures
+  artifactKey: Guid(d5db8cb6c1c554edd89b8bb93d7fcc61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/textures using Guid(d5db8cb6c1c554edd89b8bb93d7fcc61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc98c8e99cace2297328a7fdf278800a') in 0.002497 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 53.030277 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx
+  artifactKey: Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx using Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6d845902ff50284eb219ba5fb05d029') in 0.238819 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.160870 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx
+  artifactKey: Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbx using Guid(033688ffc82e6408b8ceb03bee0420f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e01e7f8cbcac3448dba7183c71b38513') in 0.210355 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 49.774495 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbm
+  artifactKey: Guid(6cbb458e590ba4c02929db1e5a6d44bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbm using Guid(6cbb458e590ba4c02929db1e5a6d44bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e025038564df7ca093b89bb64454078') in 0.004821 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.050178 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbm/Palette.jpg
+  artifactKey: Guid(5dce04e1c93ab4178817ad6201c22dab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Small City_Free_Pack.fbm/Palette.jpg using Guid(5dce04e1c93ab4178817ad6201c22dab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7dc25dae774f9f44eed4f1483f95ae16') in 0.069497 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 80.029493 seconds.
+  path: Assets/Scenes/Scene.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Scene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e3d081c4963ace66249d411ad6bcdcf') in 0.001704 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 71.752830 seconds.
+  path: Assets/Materials/MatPoint.mat
+  artifactKey: Guid(95987b761ffe7a1f195fe9e86a5ca39e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/MatPoint.mat using Guid(95987b761ffe7a1f195fe9e86a5ca39e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ffc99a81778d02c750b28af17cd6aa7') in 0.081569 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.357698 seconds.
+  path: Assets/Prefabs/Point.prefab
+  artifactKey: Guid(6e59b8cadaab315578324b26587586cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Point.prefab using Guid(6e59b8cadaab315578324b26587586cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef20cae6a1648f0850325df25908e6ff') in 0.065550 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.161457 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/World ap.11.mat
+  artifactKey: Guid(2eae4973a28fe4ba6b661ca9c3da3f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/World ap.11.mat using Guid(2eae4973a28fe4ba6b661ca9c3da3f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e064e475227af52a00b6dd351a909a4') in 0.010347 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.036288 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/World ap.16.mat
+  artifactKey: Guid(82d16b8f521984223a8c79cb1645da77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/World ap.16.mat using Guid(82d16b8f521984223a8c79cb1645da77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb50b13943cf13683ffa6e3d26d7cf21') in 0.008276 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.014925 seconds.
+  path: Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/World ap.19.mat
+  artifactKey: Guid(f7e46c246da2d440cb6269bd2a1ba4d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/cartoon-lowpoly-small-city-free-pack/source/Materials/World ap.19.mat using Guid(f7e46c246da2d440cb6269bd2a1ba4d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f73b82959f15b084d85e6c81285a5dd5') in 0.005243 seconds 

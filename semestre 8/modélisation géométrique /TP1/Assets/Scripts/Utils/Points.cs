@@ -16,20 +16,28 @@ public class Points : MonoBehaviour
     {
         // Position de la souris
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);
-
+       
         // Si on clique
         if (Input.GetButtonDown("Fire1"))
         {
+            //Debug.Log(mousePos);
             Vector3 wordPos;
             Ray ray = Camera.main.ScreenPointToRay(mousePos);
+            Debug.Log("Ray");
+            Debug.Log(ray);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 1000f))
             {
+                Debug.Log("Hit");
                 wordPos = hit.point;
+                Debug.Log(wordPos);
             }
             else
             {
+                 Debug.Log("no Hit");
                 wordPos = Camera.main.ScreenToWorldPoint(mousePos);
+                wordPos.y = 0f;
+                Debug.Log(wordPos);
             }
             // On instancie un point sur le plan
             Instantiate(particle, wordPos, Quaternion.identity);

@@ -3,9 +3,10 @@ close all;
 taille_ecran = get(0,'ScreenSize');
 L = taille_ecran(3);
 H = taille_ecran(4);
+nu_GVF=0.2;
 
-% Lecture et affichage de l'image a segmenter :
-I = imread('coins.png');
+% Lecture et affichage de l'image à segmenter :
+I = imread('pears.png');
 [nb_lignes,nb_colonnes,nb_canaux] = size(I);
 if nb_canaux==3
 	I = rgb2gray(I);
@@ -17,12 +18,24 @@ subplot(1,2,1);
 imagesc(I);
 colormap gray;
 axis image off;
+axis xy;
 title('Image a segmenter','FontSize',20);
 	
 % Champ de force externe :
 [Ix,Iy] = gradient(I);
 Eext = -(Ix.*Ix+Iy.*Iy);
 [Fx,Fy] = gradient(Eext);
+
+
+F_0x=Fx;
+F_0y=Fy;
+gamma_GVF=0.1;
+mu_GVF=2;
+norme_ext=(norm(gradient(Eext)))^2;
+for i=1:300
+    Fx=Fx-gamma_GVF*(norme_ext*(Fx-F_0x)-mu_GVF*del2(Fx));
+    Fy=Fy-gamma_GVF*(norme_ext*(Fy-F_0y)-mu_GVF*del2(Fy));
+end
 
 % Normalisation du champ de force externe pour l'affichage :
 norme = sqrt(Fx.*Fx+Fy.*Fy);
@@ -34,6 +47,7 @@ subplot(1,2,2);
 imagesc(I);
 colormap gray;
 axis image off;
+axis xy;
 hold on;
 pas_fleches = 5;
 taille_fleches = 1;
